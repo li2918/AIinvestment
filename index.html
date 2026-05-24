@@ -3,29 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI投资 - 首页</title>
+  <title>AI Investment Research · 首页</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f7f8fb; color: #111; }
-    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
-    .card { background: #fff; border-radius: 14px; box-shadow: 0 12px 28px rgba(20, 40, 90, 0.08); padding: 32px; }
-    h1 { color: #1f2a60; margin-top: 0; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 12px 0; }
-    a { display: inline-block; padding: 12px 18px; background: #eef1fb; color: #2255c7; border-radius: 10px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
-    a:hover { background: #dde4f8; }
-    .footer { text-align: center; margin-top: 24px; color: #777; font-size: 0.9rem; }
+    :root {
+      --navy-900: #051C2C;
+      --navy-700: #034B6F;
+      --blue: #2251FF;
+      --amber: #F2A900;
+      --grey-100: #F4F4F4;
+      --grey-200: #E8E8E8;
+      --grey-500: #8A8A8A;
+      --grey-700: #4A4A4A;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+      color: #1A1A1A;
+      background: #FFFFFF;
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .serif { font-family: Georgia, "Times New Roman", "Songti SC", serif; }
+    header.hero {
+      background: linear-gradient(135deg, #02101A 0%, var(--navy-900) 45%, var(--navy-700) 100%);
+      color: #fff;
+      padding: 64px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero::after {
+      content: "";
+      position: absolute;
+      right: -100px;
+      top: -100px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(34, 81, 255, 0.28) 0%, transparent 70%);
+    }
+    .inner { max-width: 1080px; margin: 0 auto; padding: 0 36px; position: relative; z-index: 2; }
+    .brand {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .brand .accent { color: var(--amber); }
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      line-height: 1.12;
+      margin: 0 0 14px;
+      max-width: 760px;
+      letter-spacing: -0.01em;
+    }
+    .sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 680px;
+      margin: 0 0 8px;
+    }
+    main { flex: 1; padding: 56px 0 72px; }
+    .section-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--navy-900);
+      margin: 0 0 28px;
+      font-weight: 600;
+    }
+    .reports {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .report-card {
+      border: 1px solid var(--grey-200);
+      padding: 28px 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      border-top: 4px solid var(--blue);
+    }
+    .report-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(5, 28, 44, 0.08);
+      border-color: var(--blue);
+      border-top-color: var(--blue);
+    }
+    .report-card .meta-row {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .report-card h3 {
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--navy-900);
+      margin: 0 0 10px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .report-card p {
+      font-size: 0.9rem;
+      color: var(--grey-700);
+      margin: 0 0 18px;
+      flex: 1;
+    }
+    .report-card .cta {
+      font-size: 0.85rem;
+      color: var(--blue);
+      font-weight: 600;
+    }
+    .report-card .cta::after { content: " →"; }
+    footer {
+      border-top: 1px solid var(--grey-200);
+      padding: 22px 0;
+      font-size: 0.78rem;
+      color: var(--grey-500);
+    }
+    footer .inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <h1>AI投资研究</h1>
-      <p>关于AI产业链头部公司与潜力标的的研究与展示。</p>
-      <ul>
-        <li><a href="ai_industry_companies.html">AI产业链头部公司与潜力公司一览 →</a></li>
-      </ul>
+
+  <header class="hero">
+    <div class="inner">
+      <div class="brand">AI<span class="accent"> · </span>Investment Research</div>
+      <h1 class="serif">人工智能产业链投资研究</h1>
+      <p class="sub">覆盖美股、A股与港股的 AI 上中下游头部与潜力公司，提供结构性判断与可执行的观察清单。</p>
     </div>
-    <div class="footer">Hosted on GitHub Pages</div>
-  </div>
+  </header>
+
+  <main>
+    <div class="inner">
+      <div class="section-title">研究报告</div>
+      <h2 class="serif">当前已发布</h2>
+      <div class="reports">
+        <a class="report-card" href="ai_industry_companies.html">
+          <div class="meta-row">REPORT 01 · 2026.05</div>
+          <h3>AI 产业链投资全景 · 美中双市场研究</h3>
+          <p>从上游算力底座到中游模型平台、下游行业落地，梳理 65+ 上市公司的价值链定位与对标关系，附美中竞争位势评分与高确信度观察清单。</p>
+          <div class="cta">阅读报告</div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div>© 2026 AI Investment Research · 仅供研究与教育用途</div>
+      <div>Hosted on GitHub Pages</div>
+    </div>
+  </footer>
 </body>
 </html>

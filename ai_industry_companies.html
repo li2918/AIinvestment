@@ -3,601 +3,1339 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI产业链头部公司与潜力公司一览</title>
+  <title>AI产业链投资全景 · 美中双市场研究 2026</title>
+  <meta name="description" content="覆盖人工智能上游算力、中游平台、下游应用的美中头部与潜力公司研究，含值链对标与投资观察清单。" />
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f7f8fb; color: #111; }
-    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
-    h1, h2, h3 { color: #1f2a60; }
-    .section { background: #fff; border-radius: 14px; box-shadow: 0 12px 28px rgba(20, 40, 90, 0.08); margin-bottom: 24px; padding: 22px; }
-    .company-table { width: 100%; border-collapse: collapse; margin-top: 14px; }
-    .company-table th, .company-table td { padding: 12px 10px; border-bottom: 1px solid #e6e9f1; text-align: left; }
-    .company-table th { background: #eef1fb; }
-    .tag { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #e8f0ff; color: #2255c7; font-size: 0.9rem; margin-right: 6px; }
-    .highlight { color: #d63e47; font-weight: bold; }
-    .note { background: #fff8e5; border-left: 4px solid #f2c94c; padding: 14px 16px; margin-top: 16px; }
-    .footer { text-align: center; margin-top: 36px; color: #555; font-size: 0.95rem; }
-    .data-panel { display: grid; gap: 12px; margin-top: 16px; }
-    .stock-card { border: 1px solid #dce1ef; border-radius: 12px; padding: 14px; background: #fbfcff; }
-    .stock-card h3 { margin: 0 0 8px; font-size: 1rem; }
-    .stock-card p { margin: 4px 0; }
+    :root {
+      --navy-900: #051C2C;
+      --navy-700: #034B6F;
+      --navy-500: #1F6FAF;
+      --blue: #2251FF;
+      --teal: #00A9A5;
+      --amber: #F2A900;
+      --crimson: #C8102E;
+      --green: #1F8A4C;
+      --grey-50: #FAFAFA;
+      --grey-100: #F4F4F4;
+      --grey-200: #E8E8E8;
+      --grey-300: #D4D4D4;
+      --grey-500: #8A8A8A;
+      --grey-700: #4A4A4A;
+      --grey-900: #1A1A1A;
+    }
+    * { box-sizing: border-box; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+      color: var(--grey-900);
+      background: #FFFFFF;
+      line-height: 1.55;
+      font-feature-settings: "tnum";
+    }
+    .serif {
+      font-family: Georgia, "Times New Roman", "Songti SC", "STSong", serif;
+    }
+
+    /* ========== Cover ========== */
+    .cover {
+      background: linear-gradient(135deg, #02101A 0%, var(--navy-900) 45%, var(--navy-700) 100%);
+      color: #fff;
+      padding: 84px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(34, 81, 255, 0.28) 0%, transparent 70%);
+    }
+    .cover .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 36px;
+      position: relative;
+      z-index: 2;
+    }
+    .cover .brand {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 28px;
+      font-weight: 600;
+    }
+    .cover .brand .accent { color: var(--amber); }
+    .cover h1 {
+      font-family: Georgia, "Songti SC", serif;
+      font-size: 3.1rem;
+      font-weight: 600;
+      line-height: 1.08;
+      margin: 0 0 18px;
+      max-width: 820px;
+      letter-spacing: -0.01em;
+    }
+    .cover .subtitle {
+      font-size: 1.12rem;
+      max-width: 720px;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 44px;
+      line-height: 1.5;
+    }
+    .cover .meta {
+      display: flex;
+      gap: 0;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      border-top: 1px solid rgba(255,255,255,0.18);
+      padding-top: 22px;
+    }
+    .cover .meta > div {
+      padding-right: 40px;
+      margin-right: 40px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .cover .meta > div:last-child { border-right: none; }
+    .cover .meta .label {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+    .cover .meta .value {
+      display:block;
+      color: #fff;
+      font-weight: 600;
+      margin-top: 6px;
+      font-size: 0.95rem;
+    }
+
+    /* ========== Page ========== */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 36px;
+    }
+    .page-narrow {
+      max-width: 880px;
+    }
+
+    /* ========== Executive Summary ========== */
+    .exec {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 64px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--grey-200);
+    }
+    .exec .col-left .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 700;
+    }
+    .exec .col-left h2 {
+      font-family: Georgia, serif;
+      font-size: 1.85rem;
+      color: var(--navy-900);
+      margin: 10px 0 16px;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+    .exec .col-left p {
+      font-size: 0.92rem;
+      color: var(--grey-700);
+      margin: 0;
+    }
+    .exec .col-right ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: insight;
+    }
+    .exec .col-right li {
+      counter-increment: insight;
+      padding: 14px 0 18px 56px;
+      position: relative;
+      border-bottom: 1px solid var(--grey-200);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+    .exec .col-right li:last-child { border-bottom: none; }
+    .exec .col-right li::before {
+      content: counter(insight, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 14px;
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--blue);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .exec .col-right li strong {
+      color: var(--navy-900);
+      font-weight: 600;
+    }
+
+    /* ========== KPI Strip ========== */
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 2px solid var(--navy-900);
+      border-bottom: 1px solid var(--grey-200);
+      margin: 48px 0 24px;
+    }
+    .kpi > div {
+      padding: 22px 20px 24px;
+      border-right: 1px solid var(--grey-200);
+    }
+    .kpi > div:last-child { border-right: none; }
+    .kpi .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      font-weight: 600;
+    }
+    .kpi .value {
+      font-family: Georgia, serif;
+      font-size: 2.4rem;
+      color: var(--navy-900);
+      font-weight: 600;
+      line-height: 1;
+      margin: 12px 0 6px;
+      letter-spacing: -0.02em;
+    }
+    .kpi .value sup { font-size: 0.95rem; color: var(--blue); margin-left: 2px; }
+    .kpi .detail {
+      font-size: 0.82rem;
+      color: var(--grey-700);
+      line-height: 1.4;
+    }
+
+    /* ========== Section Header ========== */
+    .section-head {
+      margin: 64px 0 8px;
+    }
+    .section-head .number {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 700;
+    }
+    .section-head h2 {
+      font-family: Georgia, serif;
+      font-size: 2.1rem;
+      color: var(--navy-900);
+      font-weight: 600;
+      margin: 8px 0 10px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    .section-head .lede {
+      font-size: 1rem;
+      color: var(--grey-700);
+      max-width: 760px;
+      line-height: 1.55;
+    }
+
+    /* ========== Exhibit ========== */
+    .exhibit {
+      margin: 40px 0 56px;
+      page-break-inside: avoid;
+    }
+    .exhibit-head {
+      border-top: 2px solid var(--navy-900);
+      padding: 14px 0 16px;
+    }
+    .exhibit-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 700;
+    }
+    .exhibit-title {
+      font-family: Georgia, serif;
+      font-size: 1.35rem;
+      color: var(--navy-900);
+      margin: 6px 0 4px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .exhibit-sub {
+      font-size: 0.88rem;
+      color: var(--grey-700);
+    }
+    .exhibit-foot {
+      font-size: 0.78rem;
+      color: var(--grey-500);
+      border-top: 1px solid var(--grey-200);
+      margin-top: 16px;
+      padding-top: 10px;
+      line-height: 1.55;
+    }
+    .exhibit-foot strong { color: var(--grey-700); font-weight: 600; }
+
+    /* ========== Value Chain Diagram ========== */
+    .valuechain {
+      display: grid;
+      grid-template-columns: 1fr 24px 1fr 24px 1fr;
+      gap: 0;
+      align-items: stretch;
+      margin: 4px 0;
+    }
+    .vc-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--grey-300);
+      font-size: 1.4rem;
+    }
+    .vc-card {
+      border-top: 6px solid var(--blue);
+      background: var(--grey-50);
+      padding: 22px 22px 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .vc-card:nth-of-type(2) { border-color: var(--teal); }
+    .vc-card:nth-of-type(3) { border-color: var(--amber); }
+    .vc-stage {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy-700);
+      font-weight: 700;
+    }
+    .vc-name {
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--navy-900);
+      margin: 6px 0 12px;
+      font-weight: 600;
+    }
+    .vc-body {
+      font-size: 0.88rem;
+      color: var(--grey-700);
+      margin-bottom: 14px;
+      flex: 1;
+    }
+    .vc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--grey-900);
+    }
+    .vc-list li {
+      padding: 6px 0;
+      border-top: 1px solid var(--grey-200);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .vc-list li:first-child { border-top: none; padding-top: 8px; }
+    .vc-list li span:last-child { color: var(--grey-500); font-size: 0.78rem; white-space: nowrap; }
+
+    /* ========== Tables ========== */
+    table.mck {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    table.mck thead th {
+      background: var(--navy-900);
+      color: #fff;
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--navy-900);
+    }
+    table.mck tbody td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--grey-200);
+      vertical-align: top;
+    }
+    table.mck tbody tr:hover { background: var(--grey-50); }
+    table.mck .ticker {
+      font-family: Consolas, "Courier New", monospace;
+      color: var(--navy-700);
+      font-weight: 600;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    table.mck .company {
+      font-weight: 600;
+      color: var(--navy-900);
+    }
+    table.mck .role {
+      color: var(--grey-700);
+    }
+    table.mck tr.group td {
+      background: var(--grey-100);
+      color: var(--navy-700);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-top: 1px solid var(--grey-300);
+      border-bottom: 1px solid var(--grey-300);
+    }
+    .pill {
+      display: inline-block;
+      font-size: 0.66rem;
+      padding: 2px 7px;
+      border-radius: 2px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    .pill.us { background: #E8F0FF; color: var(--blue); }
+    .pill.cn { background: #FCE6E9; color: var(--crimson); }
+    .pill.hk { background: #E6F7F5; color: #007873; }
+    .pill.adr { background: #F3E7FF; color: #6B21A8; }
+
+    /* ========== Heatmap (US/China competitive position) ========== */
+    .heatmap {
+      display: grid;
+      grid-template-columns: 220px repeat(4, 1fr);
+      border: 1px solid var(--grey-200);
+      font-size: 0.85rem;
+    }
+    .heatmap > div {
+      padding: 12px 14px;
+      border-right: 1px solid var(--grey-200);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    .heatmap > div:nth-child(5n) { border-right: none; }
+    .heatmap .hm-head {
+      background: var(--navy-900);
+      color: #fff;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .heatmap .hm-row {
+      font-weight: 600;
+      color: var(--navy-900);
+      background: var(--grey-50);
+    }
+    .heatmap .hm-cell {
+      font-size: 0.82rem;
+      color: var(--grey-700);
+      line-height: 1.4;
+    }
+    .hm-bar {
+      display: inline-block;
+      width: 64px;
+      height: 6px;
+      background: var(--grey-200);
+      border-radius: 1px;
+      margin-bottom: 6px;
+      position: relative;
+    }
+    .hm-bar i {
+      display: block;
+      height: 100%;
+      background: var(--navy-900);
+      border-radius: 1px;
+    }
+    .hm-bar.us i { background: var(--blue); }
+    .hm-bar.cn i { background: var(--crimson); }
+    .hm-bar.gap i { background: var(--amber); }
+    .hm-score {
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      color: var(--navy-900);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ========== Insight Callout ========== */
+    .insight {
+      background: var(--navy-900);
+      color: #fff;
+      padding: 36px 40px;
+      margin: 56px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--amber);
+    }
+    .insight::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(34, 81, 255, 0.22) 0%, transparent 70%);
+    }
+    .insight .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+    .insight h3 {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 8px 0 14px;
+      line-height: 1.3;
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+    }
+    .insight p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      max-width: 780px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.55;
+    }
+
+    /* ========== Watchlist ========== */
+    .watchlist {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--grey-200);
+    }
+    .wl-card {
+      padding: 22px 22px 24px;
+      border-right: 1px solid var(--grey-200);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    .wl-card:nth-child(3n) { border-right: none; }
+    .wl-card:nth-last-child(-n+3) { border-bottom: none; }
+    .wl-card .conviction {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .wl-card .conviction.high { color: var(--crimson); }
+    .wl-card .conviction.med { color: var(--amber); }
+    .wl-card .conviction.struct { color: var(--green); }
+    .wl-card h4 {
+      font-family: Georgia, serif;
+      margin: 8px 0 2px;
+      font-size: 1.1rem;
+      color: var(--navy-900);
+      font-weight: 600;
+    }
+    .wl-card .tk {
+      font-family: Consolas, "Courier New", monospace;
+      color: var(--navy-700);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .wl-card .thesis {
+      font-size: 0.85rem;
+      color: var(--grey-700);
+      margin: 10px 0 0;
+      line-height: 1.5;
+    }
+
+    /* ========== Live Data Panel ========== */
+    .live-panel {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--grey-200);
+      border: 1px solid var(--grey-200);
+      margin-top: 16px;
+    }
+    .live-card {
+      background: #fff;
+      padding: 16px 18px;
+    }
+    .live-card .lc-name {
+      font-size: 0.78rem;
+      color: var(--grey-700);
+      font-weight: 600;
+    }
+    .live-card .lc-ticker {
+      font-family: Consolas, monospace;
+      font-size: 0.72rem;
+      color: var(--grey-500);
+      margin-left: 6px;
+    }
+    .live-card .lc-price {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--navy-900);
+      font-weight: 600;
+      margin: 8px 0 4px;
+    }
+    .live-card .lc-change {
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .live-card .lc-change.up { color: var(--green); }
+    .live-card .lc-change.dn { color: var(--crimson); }
+    .live-card .lc-time {
+      font-size: 0.7rem;
+      color: var(--grey-500);
+      margin-top: 8px;
+    }
+
+    /* ========== Risks ========== */
+    .risks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .risk-card {
+      border-left: 3px solid var(--crimson);
+      padding: 4px 18px;
+    }
+    .risk-card h5 {
+      font-family: Georgia, serif;
+      margin: 0 0 6px;
+      font-size: 1rem;
+      color: var(--navy-900);
+      font-weight: 600;
+    }
+    .risk-card p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--grey-700);
+      line-height: 1.5;
+    }
+
+    /* ========== Footer ========== */
+    .doc-footer {
+      background: var(--grey-50);
+      border-top: 1px solid var(--grey-200);
+      padding: 36px 0 28px;
+      font-size: 0.8rem;
+      color: var(--grey-700);
+    }
+    .doc-footer .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 36px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 36px;
+    }
+    .doc-footer h6 {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy-900);
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
+    .doc-footer p { margin: 0 0 8px; line-height: 1.55; }
+    .doc-footer .disclaimer {
+      max-width: 720px;
+      color: var(--grey-500);
+      font-size: 0.72rem;
+      line-height: 1.55;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--grey-200);
+    }
+
+    /* ========== Responsive ========== */
+    @media (max-width: 880px) {
+      .cover h1 { font-size: 2.1rem; }
+      .cover .meta { flex-wrap: wrap; gap: 16px; }
+      .cover .meta > div { border-right: none; margin-right: 0; padding-right: 0; }
+      .exec { grid-template-columns: 1fr; gap: 28px; }
+      .kpi { grid-template-columns: repeat(2, 1fr); }
+      .kpi > div:nth-child(2) { border-right: none; }
+      .kpi > div:nth-child(1), .kpi > div:nth-child(2) { border-bottom: 1px solid var(--grey-200); }
+      .valuechain { grid-template-columns: 1fr; }
+      .vc-arrow { display: none; }
+      .heatmap { grid-template-columns: 140px repeat(4, 1fr); font-size: 0.78rem; }
+      .watchlist { grid-template-columns: 1fr; }
+      .wl-card { border-right: none; border-bottom: 1px solid var(--grey-200); }
+      .risks { grid-template-columns: 1fr; }
+      .doc-footer .inner { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .cover, .insight { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .exhibit { page-break-inside: avoid; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="section">
-      <h1>AI产业链头部公司与潜力公司（网页展示）</h1>
-      <p>本页面按AI产业上下游划分头部公司，并列出近期具有潜力、适合关注的标的。建议结合实时金融数据API实现每日更新、实时监控与分析。</p>
-    </header>
 
-    <section class="section">
-      <h2>上游：基础设施与算力平台</h2>
-      <p>上游主要包括AI芯片、制造、数据中心与基础能力提供商。</p>
-      <table class="company-table">
-        <thead>
-          <tr>
-            <th>公司</th>
-            <th>核心位置</th>
-            <th>备注</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>NVIDIA (NVDA)</td>
-            <td>AI GPU、加速器、数据中心</td>
-            <td>全球AI算力龙头，深度布局训练与推理</td>
-          </tr>
-          <tr>
-            <td>AMD (AMD)</td>
-            <td>GPU、AI加速器</td>
-            <td>与NVIDIA直接竞争，产品线扩展快速</td>
-          </tr>
-          <tr>
-            <td>Intel (INTC)</td>
-            <td>CPU、AI专用芯片</td>
-            <td>推动Xeon与Gaudi型AI芯片，企业市场优势</td>
-          </tr>
-          <tr>
-            <td>TSMC (TSM)</td>
-            <td>芯片代工</td>
-            <td>最关键的芯片制造厂商，供应AI芯片核心</td>
-          </tr>
-          <tr>
-            <td>ASML (ASML)</td>
-            <td>光刻机</td>
-            <td>高端芯片制造的核心装备供应商</td>
-          </tr>
-          <tr>
-            <td>Microsoft (MSFT)</td>
-            <td>云平台+基础模型</td>
-            <td>Azure AI、OpenAI合作、企业AI服务</td>
-          </tr>
-          <tr>
-            <td>Alphabet (GOOGL)</td>
-            <td>云平台+基础模型</td>
-            <td>Vertex AI、Gemini、搜索与广告AI融合</td>
-          </tr>
-          <tr>
-            <td>Amazon (AMZN)</td>
-            <td>云AI平台</td>
-            <td>AWS SageMaker、AI服务与数据中心资源</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>中游：AI软件、平台与行业解决方案</h2>
-      <p>中游是AI应用落地的关键，包含AI平台、企业服务与数据分析公司。</p>
-      <table class="company-table">
-        <thead>
-          <tr>
-            <th>公司</th>
-            <th>核心位置</th>
-            <th>备注</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Snowflake (SNOW)</td>
-            <td>数据云与AI分析</td>
-            <td>数据平台+AI分析协同，市场增长快</td>
-          </tr>
-          <tr>
-            <td>Palantir (PLTR)</td>
-            <td>大数据与AI分析</td>
-            <td>政府与企业客户，AI驱动决策分析</td>
-          </tr>
-          <tr>
-            <td>Salesforce (CRM)</td>
-            <td>AI CRM、企业应用</td>
-            <td>Einstein AI 在客户关系管理中的深度嵌入</td>
-          </tr>
-          <tr>
-            <td>ServiceNow (NOW)</td>
-            <td>企业智能工作流</td>
-            <td>低代码+AI助手，流程自动化优势明显</td>
-          </tr>
-          <tr>
-            <td>C3.ai (AI)</td>
-            <td>企业级AI软件</td>
-            <td>AI应用平台，专注工业与能源领域</td>
-          </tr>
-          <tr>
-            <td>UiPath (PATH)</td>
-            <td>自动化机器人流程</td>
-            <td>RPA与AI结合，自动化场景广泛</td>
-          </tr>
-          <tr>
-            <td>Datadog (DDOG)</td>
-            <td>智能监控与可 observability</td>
-            <td>AI增强监控，支持云原生多场景</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>下游：行业应用与终端场景</h2>
-      <p>下游公司将AI能力转化为具体产品与服务，在医疗、汽车、金融、零售、制造等领域落地。</p>
-      <table class="company-table">
-        <thead>
-          <tr>
-            <th>公司</th>
-            <th>应用场景</th>
-            <th>备注</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tesla (TSLA)</td>
-            <td>自动驾驶、机器人</td>
-            <td>自动驾驶软件与AI训练平台是核心竞争力</td>
-          </tr>
-          <tr>
-            <td>Intuitive Surgical (ISRG)</td>
-            <td>医疗机器人</td>
-            <td>手术机器人与AI成像支持未来医疗升级</td>
-          </tr>
-          <tr>
-            <td>JD.com (JD)</td>
-            <td>智能物流与零售</td>
-            <td>仓储机器人、供应链AI优化</td>
-          </tr>
-          <tr>
-            <td>Alibaba (BABA)</td>
-            <td>云+AI应用</td>
-            <td>达摩院、城市大脑、智能客服等应用广泛</td>
-          </tr>
-          <tr>
-            <td>ABB (ABB)</td>
-            <td>机器人与工业自动化</td>
-            <td>AI+工业机器人，行业自动化升级支撑</td>
-          </tr>
-          <tr>
-            <td>Cognex (CGNX)</td>
-            <td>机器视觉</td>
-            <td>工业检测与视觉AI市场领先</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section">
-      <h2>中国AI产业链对标与关联企业</h2>
-      <p>以下整理A股、港股及部分中概股中，与上文海外龙头形成对标或处于关联产业链上的代表性公司。括号内为股票代码（A股为沪/深，港股为四位数字，中概股为美股代码）。</p>
-
-      <h3>上游：算力、芯片与制造</h3>
-      <table class="company-table">
-        <thead>
-          <tr>
-            <th>公司</th>
-            <th>核心位置</th>
-            <th>海外对标</th>
-            <th>备注</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>寒武纪 (688256)</td>
-            <td>AI训练/推理芯片</td>
-            <td>NVIDIA、AMD</td>
-            <td>国产AI芯片龙头，思元系列加速器持续迭代</td>
-          </tr>
-          <tr>
-            <td>海光信息 (688041)</td>
-            <td>CPU + DCU加速卡</td>
-            <td>AMD、Intel</td>
-            <td>x86架构授权，DCU兼容CUDA生态，信创核心</td>
-          </tr>
-          <tr>
-            <td>景嘉微 (300474)</td>
-            <td>国产GPU</td>
-            <td>NVIDIA</td>
-            <td>军工与信创GPU供应，逐步切入AI推理市场</td>
-          </tr>
-          <tr>
-            <td>龙芯中科 (688047)</td>
-            <td>自主指令集CPU</td>
-            <td>Intel</td>
-            <td>LoongArch架构，党政信创主力</td>
-          </tr>
-          <tr>
-            <td>中芯国际 (688981 / 0981.HK)</td>
-            <td>晶圆代工</td>
-            <td>TSMC</td>
-            <td>大陆最大代工厂，先进制程持续突破</td>
-          </tr>
-          <tr>
-            <td>华虹半导体 (688347 / 1347.HK)</td>
-            <td>特色工艺代工</td>
-            <td>TSMC（成熟制程）</td>
-            <td>功率/MCU/eFlash领先，AI周边器件受益</td>
-          </tr>
-          <tr>
-            <td>北方华创 (002371)</td>
-            <td>半导体设备</td>
-            <td>ASML、AMAT</td>
-            <td>刻蚀、薄膜等设备国产化主力</td>
-          </tr>
-          <tr>
-            <td>中微公司 (688012)</td>
-            <td>刻蚀设备</td>
-            <td>Lam Research</td>
-            <td>5nm及以下制程刻蚀进入国际供应链</td>
-          </tr>
-          <tr>
-            <td>浪潮信息 (000977)</td>
-            <td>AI服务器</td>
-            <td>Dell、HPE、Supermicro</td>
-            <td>国内AI服务器市占率第一，与NVIDIA深度合作</td>
-          </tr>
-          <tr>
-            <td>中科曙光 (603019)</td>
-            <td>高性能计算与服务器</td>
-            <td>HPE、Dell</td>
-            <td>HPC与液冷算力布局，控股海光信息</td>
-          </tr>
-          <tr>
-            <td>工业富联 (601138)</td>
-            <td>云计算服务器代工</td>
-            <td>Foxconn母公司</td>
-            <td>NVIDIA GB200等AI服务器关键代工方</td>
-          </tr>
-          <tr>
-            <td>中际旭创 (300308)</td>
-            <td>高速光模块</td>
-            <td>Coherent、Lumentum</td>
-            <td>800G光模块全球领先，AI数据中心核心受益</td>
-          </tr>
-          <tr>
-            <td>新易盛 (300502)</td>
-            <td>光模块</td>
-            <td>Coherent</td>
-            <td>高速光模块出货放量，海外AI客户拓展快</td>
-          </tr>
-          <tr>
-            <td>天孚通信 (300394)</td>
-            <td>光器件</td>
-            <td>II-VI</td>
-            <td>光模块上游器件，受益AI光通信扩张</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>中游：模型、平台与数据</h3>
-      <table class="company-table">
-        <thead>
-          <tr>
-            <th>公司</th>
-            <th>核心位置</th>
-            <th>海外对标</th>
-            <th>备注</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>百度 (BIDU / 9888.HK)</td>
-            <td>大模型 + 云</td>
-            <td>Alphabet、OpenAI</td>
-            <td>文心一言大模型 + 百度智能云，自动驾驶Apollo</td>
-          </tr>
-          <tr>
-            <td>阿里巴巴 (BABA / 9988.HK)</td>
-            <td>云 + 通义大模型</td>
-            <td>Amazon AWS、Microsoft Azure</td>
-            <td>通义千问开源生态完善，阿里云持续投入AI算力</td>
-          </tr>
-          <tr>
-            <td>腾讯控股 (0700.HK)</td>
-            <td>大模型 + 云 + 应用</td>
-            <td>Microsoft、Meta</td>
-            <td>混元大模型，AI在微信/游戏/广告全场景渗透</td>
-          </tr>
-          <tr>
-            <td>商汤-W (0020.HK)</td>
-            <td>视觉AI + 大模型</td>
-            <td>OpenAI、Palantir</td>
-            <td>日日新大模型，AI基础设施"大装置"持续投入</td>
-          </tr>
-          <tr>
-            <td>科大讯飞 (002230)</td>
-            <td>语音AI + 大模型</td>
-            <td>Nuance / Microsoft</td>
-            <td>星火大模型，教育/办公/医疗AI落地领先</td>
-          </tr>
-          <tr>
-            <td>第四范式 (6682.HK)</td>
-            <td>企业级AI平台</td>
-            <td>C3.ai、Palantir</td>
-            <td>"先知"平台，决策类AI在金融/零售应用广泛</td>
-          </tr>
-          <tr>
-            <td>金山办公 (688111)</td>
-            <td>办公软件 + AI</td>
-            <td>Microsoft 365 Copilot</td>
-            <td>WPS AI接入大模型，订阅化与AI变现路径清晰</td>
-          </tr>
-          <tr>
-            <td>用友网络 (600588)</td>
-            <td>企业ERP + AI</td>
-            <td>Salesforce、SAP</td>
-            <td>YonGPT嵌入财务/HR/供应链场景</td>
-          </tr>
-          <tr>
-            <td>金蝶国际 (0268.HK)</td>
-            <td>云ERP + AI</td>
-            <td>Salesforce</td>
-            <td>苍穹AI助手，云ERP订阅占比持续提升</td>
-          </tr>
-          <tr>
-            <td>泛微网络 (603039)</td>
-            <td>智能协同OA</td>
-            <td>ServiceNow</td>
-            <td>e-cology + AI Agent，流程自动化升级</td>
-          </tr>
-          <tr>
-            <td>星环科技 (688031)</td>
-            <td>大数据 + 数据库</td>
-            <td>Snowflake、Databricks</td>
-            <td>分布式数据库 + AI数据底座</td>
-          </tr>
-          <tr>
-            <td>拓尔思 (300229)</td>
-            <td>语义/大数据分析</td>
-            <td>Palantir</td>
-            <td>NLP与行业大模型，政务/媒体客户广泛</td>
-          </tr>
-          <tr>
-            <td>同花顺 (300033)</td>
-            <td>金融数据 + AI</td>
-            <td>Bloomberg、Palantir</td>
-            <td>金融AI助手与量化产品，证券客户覆盖深</td>
-          </tr>
-          <tr>
-            <td>博睿数据 (688229)</td>
-            <td>可观测性平台</td>
-            <td>Datadog</td>
-            <td>APM/IT监控，逐步引入AIOps能力</td>
-          </tr>
-          <tr>
-            <td>昆仑万维 (300418)</td>
-            <td>大模型 + AI应用</td>
-            <td>OpenAI、Stability</td>
-            <td>天工大模型，AI搜索/音乐/社交多线布局</td>
-          </tr>
-          <tr>
-            <td>万兴科技 (300624)</td>
-            <td>消费级AI软件</td>
-            <td>Adobe</td>
-            <td>视频/PDF/绘图工具加速AI化</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>下游：行业应用与终端</h3>
-      <table class="company-table">
-        <thead>
-          <tr>
-            <th>公司</th>
-            <th>核心位置</th>
-            <th>海外对标</th>
-            <th>备注</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>比亚迪 (002594 / 1211.HK)</td>
-            <td>智能电动车</td>
-            <td>Tesla</td>
-            <td>"天神之眼"智驾平台，垂直整合 + 海外扩张</td>
-          </tr>
-          <tr>
-            <td>小鹏汽车 (XPEV / 9868.HK)</td>
-            <td>智能驾驶</td>
-            <td>Tesla</td>
-            <td>XNGP端到端方案落地最快的国产车企之一</td>
-          </tr>
-          <tr>
-            <td>蔚来 (NIO / 9866.HK)</td>
-            <td>智能电动车</td>
-            <td>Tesla、Lucid</td>
-            <td>NIO Phone + 换电生态，高端市场定位</td>
-          </tr>
-          <tr>
-            <td>理想汽车 (LI / 2015.HK)</td>
-            <td>智能电动车</td>
-            <td>Tesla</td>
-            <td>AD Max端到端 + 自研MindGPT</td>
-          </tr>
-          <tr>
-            <td>德赛西威 (002920)</td>
-            <td>智能座舱 / ADAS</td>
-            <td>Mobileye、Aptiv</td>
-            <td>NVIDIA Orin域控制器主要合作方</td>
-          </tr>
-          <tr>
-            <td>地平线 (9660.HK)</td>
-            <td>车载AI芯片</td>
-            <td>Mobileye、NVIDIA Drive</td>
-            <td>征程系列芯片广泛搭载于国产智驾车型</td>
-          </tr>
-          <tr>
-            <td>海康威视 (002415)</td>
-            <td>AI视觉 / 安防</td>
-            <td>Cognex、Axis</td>
-            <td>全球安防龙头，机器视觉与AIoT持续扩展</td>
-          </tr>
-          <tr>
-            <td>大华股份 (002236)</td>
-            <td>AI视觉 / 安防</td>
-            <td>Cognex</td>
-            <td>视觉算法 + 行业解决方案双轮驱动</td>
-          </tr>
-          <tr>
-            <td>奥普特 (688686)</td>
-            <td>机器视觉部件</td>
-            <td>Cognex、Keyence</td>
-            <td>光源/镜头/视觉控制器国产化代表</td>
-          </tr>
-          <tr>
-            <td>凌云光 (688400)</td>
-            <td>工业视觉系统</td>
-            <td>Cognex</td>
-            <td>3C/新能源/印刷等领域视觉检测方案</td>
-          </tr>
-          <tr>
-            <td>埃斯顿 (002747)</td>
-            <td>工业机器人</td>
-            <td>ABB、Fanuc</td>
-            <td>国产工业机器人本体龙头</td>
-          </tr>
-          <tr>
-            <td>汇川技术 (300124)</td>
-            <td>工业自动化 / 伺服</td>
-            <td>Siemens、ABB</td>
-            <td>伺服/PLC市占率持续提升，新能源车电控配套</td>
-          </tr>
-          <tr>
-            <td>新时达 (002527)</td>
-            <td>电梯控制 / 机器人</td>
-            <td>ABB</td>
-            <td>SCARA与协作机器人布局</td>
-          </tr>
-          <tr>
-            <td>联影医疗 (688271)</td>
-            <td>医疗影像 + AI</td>
-            <td>GE Healthcare、Siemens Healthineers</td>
-            <td>高端CT/MR国产替代 + uAI影像平台</td>
-          </tr>
-          <tr>
-            <td>微创医疗 (0853.HK)</td>
-            <td>手术机器人</td>
-            <td>Intuitive Surgical</td>
-            <td>图迈腔镜手术机器人商业化推进中</td>
-          </tr>
-          <tr>
-            <td>京东 (JD / 9618.HK)</td>
-            <td>智能物流 / 零售AI</td>
-            <td>Amazon</td>
-            <td>仓储机器人、言犀大模型与供应链AI</td>
-          </tr>
-          <tr>
-            <td>美团 (3690.HK)</td>
-            <td>本地生活 + 无人配送</td>
-            <td>—</td>
-            <td>无人机/自动配送车 + 大模型客服</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="note">
-        <strong>提示：</strong>A股、港股与中概股各自的交易时间、信息披露规则与流动性差异显著。同一公司可能存在A+H双重上市（如比亚迪 002594/1211.HK），实时数据接入时建议按交易所代码区分。
+  <!-- ============================================================
+       COVER
+       ============================================================ -->
+  <header class="cover">
+    <div class="inner">
+      <div class="brand">AI<span class="accent"> · </span>Investment Research</div>
+      <h1 class="serif">AI 产业链投资全景<br/>美中双市场对标研究</h1>
+      <p class="subtitle">从上游算力基础设施，到中游模型与平台，再到下游行业落地——梳理 65+ 上市公司在 AI 价值链上的核心定位与可比关系，识别结构性赢家与高潜标的。</p>
+      <div class="meta">
+        <div>
+          <div class="label">报告类型</div>
+          <span class="value">行业横断研究</span>
+        </div>
+        <div>
+          <div class="label">覆盖范围</div>
+          <span class="value">美股 · A股 · 港股</span>
+        </div>
+        <div>
+          <div class="label">发布日期</div>
+          <span class="value">2026 年 5 月</span>
+        </div>
+        <div>
+          <div class="label">公司数量</div>
+          <span class="value">65+</span>
+        </div>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <section class="section">
-      <h2>最新潜力公司推荐</h2>
-      <p>根据最新行业发展与金融市场热点，这些公司值得持续关注：</p>
-      <ul>
-        <li><strong>Arm Holdings (ARM)</strong>：若上市或回归市场，作为芯片架构核心厂商，AI生态价值极高。</li>
-        <li><strong>Snowflake (SNOW)</strong>：数据云与AI协同增长、商业化路径稳健。</li>
-        <li><strong>Palantir (PLTR)</strong>：行业客户粘性高，AI决策平台在国防与商业领域均受重视。</li>
-        <li><strong>Unity Software (U)</strong>：生成式AI内容与元宇宙工具平台，未来CG与建模AI需求大。</li>
-        <li><strong>Nuance / Microsoft (MSFT)</strong>：语音AI与医疗AI服务持续扩展。</li>
-        <li><strong>Cerebras Systems</strong>（私有或待上市公司）</li>
-      </ul>
-      <div class="note">
-        <strong>说明：</strong>若你需要真实网页每日实时数据，请接入金融API（如 Finnhub、Alpha Vantage、Twelve Data、Polygon、Yahoo Finance 等），并将本页面中的API密钥与代码进行替换。
+  <!-- ============================================================
+       EXECUTIVE SUMMARY
+       ============================================================ -->
+  <section class="page">
+    <div class="exec">
+      <div class="col-left">
+        <div class="eyebrow">执行摘要</div>
+        <h2 class="serif">五个核心判断</h2>
+        <p>基于价值链结构、竞争格局与资本市场反应的横向比较，我们就当前 AI 投资周期形成以下判断。每条判断都对应本报告后续章节中的具体证据与公司清单。</p>
       </div>
-    </section>
+      <div class="col-right">
+        <ol>
+          <li><strong>算力仍是稀缺资源，但议价权正在向"系统"层迁移。</strong>GPU 与代工的瓶颈不会迅速缓解，但 AI 服务器、互联（光模块）和液冷成为新的获利窗口。</li>
+          <li><strong>大模型层将进入"少数赢者通吃"格局。</strong>训练成本与数据飞轮的复利效应使得头部 3–5 家厂商占据绝大部分商业化产值，二线模型公司需依靠垂直纵深生存。</li>
+          <li><strong>"AI + 软件" 的盈利兑现快于 "AI + 硬件终端"。</strong>办公、CRM、ERP、可观测性等 SaaS 已能直接将模型能力转化为 ARPU 提升；机器人、智能驾驶的兑现周期更长。</li>
+          <li><strong>美中产业链已形成两套互不替代的体系。</strong>美方在尖端模型、芯片设计与软件生态占优；中方在制造规模、应用场景与供应链一体化占优。投资思路应"双轨"而非"二选一"。</li>
+          <li><strong>2026 年的结构性 alpha 来自"卡点"环节。</strong>光模块、HBM、先进封装、电源管理、机器视觉等过去被低估的"卖铲子"环节，仍处于供需错配阶段。</li>
+        </ol>
+      </div>
+    </div>
 
-    <section class="section">
-      <h2>实时数据演示</h2>
-      <p>下面是示例股票代码与实时价格板块。请在实际使用中替换API地址与密钥。</p>
-      <div id="stock-data" class="data-panel"></div>
-      <script>
-        const stocks = [
-          { symbol: 'NVDA', name: 'NVIDIA' },
-          { symbol: 'MSFT', name: 'Microsoft' },
-          { symbol: 'GOOGL', name: 'Alphabet' },
-          { symbol: 'SNOW', name: 'Snowflake' },
-          { symbol: 'PLTR', name: 'Palantir' },
-          { symbol: 'BABA', name: '阿里巴巴' },
-          { symbol: 'BIDU', name: '百度' },
-          { symbol: 'JD',   name: '京东' },
-          { symbol: 'XPEV', name: '小鹏汽车' },
-          { symbol: 'LI',   name: '理想汽车' }
-        ];
+    <!-- KPI Strip -->
+    <div class="kpi">
+      <div>
+        <div class="label">覆盖公司</div>
+        <div class="value serif">65<sup>+</sup></div>
+        <div class="detail">跨美股、A股、港股的代表性上市公司</div>
+      </div>
+      <div>
+        <div class="label">价值链层级</div>
+        <div class="value serif">3</div>
+        <div class="detail">上游 · 中游 · 下游 + 关键卡点环节</div>
+      </div>
+      <div>
+        <div class="label">高确信度标的</div>
+        <div class="value serif">9</div>
+        <div class="detail">穿越短期波动的结构性赢家</div>
+      </div>
+      <div>
+        <div class="label">主要风险因子</div>
+        <div class="value serif">6</div>
+        <div class="detail">监管、出口管制、能耗、估值、节奏、地缘</div>
+      </div>
+    </div>
 
-        const apiKey = 'YOUR_API_KEY_HERE';
-        const container = document.getElementById('stock-data');
+    <!-- ============================================================
+         SECTION 1 — VALUE CHAIN
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第一章 · 价值链结构</div>
+      <h2 class="serif">AI 投资的三层结构与利润迁移</h2>
+      <p class="lede">理解 AI 投资的起点是看清"算力—模型/平台—应用"三个层级各自的资本回报形态。三层之间存在显著的现金流时序差异：上游已在兑现，中游进入分化，下游兑现仍以试点为主。</p>
+    </div>
 
-        function renderCard(stock, data) {
-          const card = document.createElement('div');
-          card.className = 'stock-card';
-          card.innerHTML = `
-            <h3>${stock.name} (${stock.symbol})</h3>
-            <p>最新价：<span>${data?.price ?? '—'}</span></p>
-            <p>日涨跌：<span>${data?.change ?? '—'}</span></p>
-            <p>更新时间：<span>${data?.timestamp ?? '—'}</span></p>
-          `;
-          return card;
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 1</div>
+        <div class="exhibit-title serif">AI 产业价值链：从算力底座到行业落地</div>
+        <div class="exhibit-sub">三层架构与各层代表性环节</div>
+      </div>
+      <div class="valuechain">
+        <div class="vc-card">
+          <div class="vc-stage">上游 · UPSTREAM</div>
+          <div class="vc-name serif">算力与基础设施</div>
+          <div class="vc-body">AI 训练与推理所需的芯片、制造、设备、服务器、光通信与云算力平台。该层已实现规模化盈利兑现。</div>
+          <ul class="vc-list">
+            <li><span>AI 芯片</span><span>NVDA / AMD / 寒武纪</span></li>
+            <li><span>晶圆代工</span><span>TSM / 中芯国际</span></li>
+            <li><span>半导体设备</span><span>ASML / 北方华创</span></li>
+            <li><span>AI 服务器</span><span>Supermicro / 浪潮信息</span></li>
+            <li><span>光模块</span><span>Coherent / 中际旭创</span></li>
+            <li><span>云算力</span><span>MSFT / AMZN / BABA</span></li>
+          </ul>
+        </div>
+        <div class="vc-arrow">▸</div>
+        <div class="vc-card">
+          <div class="vc-stage">中游 · MIDSTREAM</div>
+          <div class="vc-name serif">模型、平台与数据</div>
+          <div class="vc-body">基础大模型、AI 平台、数据云与企业级 AI 软件。该层处于商业化分化期，头部效应明显。</div>
+          <ul class="vc-list">
+            <li><span>基础模型</span><span>OpenAI / Anthropic / 文心</span></li>
+            <li><span>企业 AI 平台</span><span>Palantir / 第四范式</span></li>
+            <li><span>数据云</span><span>Snowflake / 星环科技</span></li>
+            <li><span>AI CRM/ERP</span><span>Salesforce / 用友</span></li>
+            <li><span>可观测性</span><span>Datadog / 博睿数据</span></li>
+            <li><span>AI 办公</span><span>MSFT Copilot / WPS AI</span></li>
+          </ul>
+        </div>
+        <div class="vc-arrow">▸</div>
+        <div class="vc-card">
+          <div class="vc-stage">下游 · DOWNSTREAM</div>
+          <div class="vc-name serif">行业应用与终端</div>
+          <div class="vc-body">智能驾驶、机器人、医疗、安防、物流、零售等场景化 AI。盈利兑现节奏最长，单点突破后弹性最大。</div>
+          <ul class="vc-list">
+            <li><span>智能驾驶</span><span>TSLA / 比亚迪 / 小鹏</span></li>
+            <li><span>工业机器人</span><span>ABB / 埃斯顿</span></li>
+            <li><span>医疗机器人</span><span>ISRG / 微创医疗</span></li>
+            <li><span>机器视觉</span><span>CGNX / 海康威视</span></li>
+            <li><span>智能物流</span><span>AMZN / 京东</span></li>
+            <li><span>AI 内容</span><span>Adobe / 万兴科技</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="exhibit-foot"><strong>资料来源：</strong>公司公告、产业访谈，研究整理。"卡点"指当前供需错配显著、上下游议价权外溢的细分环节，详见 Exhibit 5。</div>
+    </div>
+
+    <!-- INSIGHT CALLOUT -->
+    <div class="insight">
+      <div class="label">Key Insight</div>
+      <h3 class="serif">"卖铲子" 仍是 2026 年最确定的逻辑——但"铲子"已不止 GPU</h3>
+      <p>过去 18 个月，超额收益高度集中在 NVIDIA。下一阶段，市场将重新审视那些"GPU 出货必须放量"的关联环节：HBM、CoWoS 先进封装、800G/1.6T 光模块、AI 数据中心电源与液冷。它们在估值上仍低于核心 GPU，但订单弹性可能更高。</p>
+    </div>
+
+    <!-- ============================================================
+         SECTION 2 — UPSTREAM
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第二章 · 上游</div>
+      <h2 class="serif">算力底座：美中两条供应链的对称与不对称</h2>
+      <p class="lede">上游是 AI 投资中确定性最高、但同时也是地缘扰动最敏感的层级。美方在尖端 GPU 与设备保持代际领先；中方依靠"成熟制程 + 服务器系统 + 光模块"形成另一条可商业化的路径。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 2</div>
+        <div class="exhibit-title serif">上游头部公司对照</div>
+        <div class="exhibit-sub">按细分环节列出美中代表性公司及核心定位</div>
+      </div>
+      <table class="mck">
+        <colgroup>
+          <col style="width:26%"><col style="width:28%"><col style="width:46%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>细分环节</th>
+            <th>代表公司</th>
+            <th>核心定位与备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="group"><td colspan="3">AI 芯片 · GPU/加速器</td></tr>
+          <tr><td class="role">通用 GPU / 训练</td><td><span class="company">NVIDIA</span> <span class="ticker">NVDA</span><span class="pill us">US</span></td><td>AI 算力绝对龙头，CUDA 生态构筑深厚护城河</td></tr>
+          <tr><td class="role">GPU / 加速器</td><td><span class="company">AMD</span> <span class="ticker">AMD</span><span class="pill us">US</span></td><td>MI300 系列加速追赶，ROCm 生态在推理市场份额提升</td></tr>
+          <tr><td class="role">CPU + AI 加速</td><td><span class="company">Intel</span> <span class="ticker">INTC</span><span class="pill us">US</span></td><td>Gaudi 加速器 + Xeon AI 指令集，企业市场布局扎实</td></tr>
+          <tr><td class="role">AI 训练/推理芯片</td><td><span class="company">寒武纪</span> <span class="ticker">688256</span><span class="pill cn">A股</span></td><td>国产 AI 芯片代表，思元系列持续迭代</td></tr>
+          <tr><td class="role">CPU + DCU 加速卡</td><td><span class="company">海光信息</span> <span class="ticker">688041</span><span class="pill cn">A股</span></td><td>x86 授权 + 兼容 CUDA 生态，信创核心</td></tr>
+          <tr><td class="role">国产 GPU</td><td><span class="company">景嘉微</span> <span class="ticker">300474</span><span class="pill cn">A股</span></td><td>军工与信创 GPU 供应，切入 AI 推理</td></tr>
+
+          <tr class="group"><td colspan="3">晶圆制造 · 代工</td></tr>
+          <tr><td class="role">先进制程代工</td><td><span class="company">TSMC</span> <span class="ticker">TSM</span><span class="pill us">US/TW</span></td><td>全球 AI 芯片关键代工方，CoWoS 封装产能瓶颈</td></tr>
+          <tr><td class="role">大陆代工</td><td><span class="company">中芯国际</span> <span class="ticker">688981 / 0981.HK</span><span class="pill cn">A+H</span></td><td>大陆最大代工厂，先进制程持续突破</td></tr>
+          <tr><td class="role">特色工艺代工</td><td><span class="company">华虹半导体</span> <span class="ticker">688347 / 1347.HK</span><span class="pill cn">A+H</span></td><td>功率/MCU/eFlash 领先，AI 周边器件受益</td></tr>
+
+          <tr class="group"><td colspan="3">半导体设备</td></tr>
+          <tr><td class="role">光刻机</td><td><span class="company">ASML</span> <span class="ticker">ASML</span><span class="pill us">EU</span></td><td>EUV 光刻独家供应，先进制程必经环节</td></tr>
+          <tr><td class="role">综合设备</td><td><span class="company">北方华创</span> <span class="ticker">002371</span><span class="pill cn">A股</span></td><td>刻蚀、薄膜等设备国产化主力</td></tr>
+          <tr><td class="role">刻蚀设备</td><td><span class="company">中微公司</span> <span class="ticker">688012</span><span class="pill cn">A股</span></td><td>5nm 及以下刻蚀进入国际供应链</td></tr>
+
+          <tr class="group"><td colspan="3">AI 服务器与高速互联</td></tr>
+          <tr><td class="role">AI 服务器</td><td><span class="company">浪潮信息</span> <span class="ticker">000977</span><span class="pill cn">A股</span></td><td>国内 AI 服务器市占率第一</td></tr>
+          <tr><td class="role">HPC / 服务器</td><td><span class="company">中科曙光</span> <span class="ticker">603019</span><span class="pill cn">A股</span></td><td>HPC 与液冷算力布局，控股海光信息</td></tr>
+          <tr><td class="role">服务器代工</td><td><span class="company">工业富联</span> <span class="ticker">601138</span><span class="pill cn">A股</span></td><td>NVIDIA GB200 等 AI 服务器关键代工</td></tr>
+          <tr><td class="role">高速光模块</td><td><span class="company">中际旭创</span> <span class="ticker">300308</span><span class="pill cn">A股</span></td><td>800G 光模块全球领先</td></tr>
+          <tr><td class="role">光模块</td><td><span class="company">新易盛</span> <span class="ticker">300502</span><span class="pill cn">A股</span></td><td>高速光模块出货放量，海外客户拓展</td></tr>
+          <tr><td class="role">光器件</td><td><span class="company">天孚通信</span> <span class="ticker">300394</span><span class="pill cn">A股</span></td><td>光模块上游器件，受益 AI 光通信</td></tr>
+
+          <tr class="group"><td colspan="3">云算力平台</td></tr>
+          <tr><td class="role">超大规模云</td><td><span class="company">Microsoft</span> <span class="ticker">MSFT</span><span class="pill us">US</span></td><td>Azure + OpenAI 合作，企业 AI 服务领先</td></tr>
+          <tr><td class="role">超大规模云</td><td><span class="company">Alphabet</span> <span class="ticker">GOOGL</span><span class="pill us">US</span></td><td>Vertex AI + Gemini，搜索与广告 AI 融合</td></tr>
+          <tr><td class="role">超大规模云</td><td><span class="company">Amazon</span> <span class="ticker">AMZN</span><span class="pill us">US</span></td><td>AWS SageMaker + Anthropic 战略投资</td></tr>
+          <tr><td class="role">中国云算力</td><td><span class="company">阿里巴巴</span> <span class="ticker">BABA / 9988.HK</span><span class="pill adr">ADR</span></td><td>阿里云持续投入 AI 算力，通义大模型</td></tr>
+        </tbody>
+      </table>
+      <div class="exhibit-foot"><strong>注：</strong>US = 美股；A 股 = 沪深；A+H = 同时在 A 股与港股上市；ADR = 美国存托凭证。代码栏中 / 分隔双重上市编号。</div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 3 — MIDSTREAM
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第三章 · 中游</div>
+      <h2 class="serif">模型与平台：商业化分水岭</h2>
+      <p class="lede">基础模型层的"赢者通吃"已基本明朗；企业级 AI 软件的兑现速度则在加快，"AI + SaaS" 提价路径已可量化。中国市场在场景丰富度与数据规模上具备结构性优势。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 3</div>
+        <div class="exhibit-title serif">中游头部公司对照</div>
+        <div class="exhibit-sub">模型、企业 AI 平台、数据云与垂直 SaaS</div>
+      </div>
+      <table class="mck">
+        <colgroup>
+          <col style="width:26%"><col style="width:28%"><col style="width:46%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>细分环节</th>
+            <th>代表公司</th>
+            <th>核心定位与备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="group"><td colspan="3">基础大模型 + 云平台</td></tr>
+          <tr><td class="role">闭源模型 / 云</td><td><span class="company">Microsoft</span> <span class="ticker">MSFT</span><span class="pill us">US</span></td><td>OpenAI 深度绑定，Copilot 全栈渗透</td></tr>
+          <tr><td class="role">闭源模型 / 云</td><td><span class="company">Alphabet</span> <span class="ticker">GOOGL</span><span class="pill us">US</span></td><td>Gemini 2.x + 搜索/广告 AI 一体化</td></tr>
+          <tr><td class="role">大模型 + 云</td><td><span class="company">百度</span> <span class="ticker">BIDU / 9888.HK</span><span class="pill adr">ADR</span></td><td>文心一言 + 百度智能云 + Apollo 自动驾驶</td></tr>
+          <tr><td class="role">云 + 通义大模型</td><td><span class="company">阿里巴巴</span> <span class="ticker">BABA / 9988.HK</span><span class="pill adr">ADR</span></td><td>通义千问开源生态完善</td></tr>
+          <tr><td class="role">大模型 + 应用</td><td><span class="company">腾讯控股</span> <span class="ticker">0700.HK</span><span class="pill hk">港股</span></td><td>混元大模型 + 微信/游戏/广告 AI 渗透</td></tr>
+          <tr><td class="role">视觉 + 大模型</td><td><span class="company">商汤-W</span> <span class="ticker">0020.HK</span><span class="pill hk">港股</span></td><td>日日新大模型，AI 基础设施"大装置"</td></tr>
+          <tr><td class="role">语音 AI + 大模型</td><td><span class="company">科大讯飞</span> <span class="ticker">002230</span><span class="pill cn">A股</span></td><td>星火大模型，教育/办公/医疗 AI 领先</td></tr>
+
+          <tr class="group"><td colspan="3">企业级 AI 平台与数据云</td></tr>
+          <tr><td class="role">数据云</td><td><span class="company">Snowflake</span> <span class="ticker">SNOW</span><span class="pill us">US</span></td><td>数据平台 + AI 分析协同</td></tr>
+          <tr><td class="role">大数据 + AI</td><td><span class="company">Palantir</span> <span class="ticker">PLTR</span><span class="pill us">US</span></td><td>AIP 在国防与商业领域加速渗透</td></tr>
+          <tr><td class="role">企业级 AI 软件</td><td><span class="company">C3.ai</span> <span class="ticker">AI</span><span class="pill us">US</span></td><td>专注工业与能源 AI 应用</td></tr>
+          <tr><td class="role">企业级 AI 平台</td><td><span class="company">第四范式</span> <span class="ticker">6682.HK</span><span class="pill hk">港股</span></td><td>"先知"平台，金融/零售决策 AI</td></tr>
+          <tr><td class="role">大数据 + 数据库</td><td><span class="company">星环科技</span> <span class="ticker">688031</span><span class="pill cn">A股</span></td><td>分布式数据库 + AI 数据底座</td></tr>
+          <tr><td class="role">语义/大数据</td><td><span class="company">拓尔思</span> <span class="ticker">300229</span><span class="pill cn">A股</span></td><td>NLP + 行业大模型，政务/媒体客户</td></tr>
+
+          <tr class="group"><td colspan="3">AI 软件 · CRM/ERP/OA</td></tr>
+          <tr><td class="role">AI CRM</td><td><span class="company">Salesforce</span> <span class="ticker">CRM</span><span class="pill us">US</span></td><td>Einstein/Agentforce 深度嵌入 CRM</td></tr>
+          <tr><td class="role">企业智能工作流</td><td><span class="company">ServiceNow</span> <span class="ticker">NOW</span><span class="pill us">US</span></td><td>低代码 + AI 助手，流程自动化</td></tr>
+          <tr><td class="role">企业 ERP + AI</td><td><span class="company">用友网络</span> <span class="ticker">600588</span><span class="pill cn">A股</span></td><td>YonGPT 嵌入财务/HR/供应链</td></tr>
+          <tr><td class="role">云 ERP + AI</td><td><span class="company">金蝶国际</span> <span class="ticker">0268.HK</span><span class="pill hk">港股</span></td><td>苍穹 AI 助手，云 ERP 订阅化</td></tr>
+          <tr><td class="role">协同 OA</td><td><span class="company">泛微网络</span> <span class="ticker">603039</span><span class="pill cn">A股</span></td><td>e-cology + AI Agent</td></tr>
+          <tr><td class="role">AI 办公</td><td><span class="company">金山办公</span> <span class="ticker">688111</span><span class="pill cn">A股</span></td><td>WPS AI 接入大模型，订阅化推进</td></tr>
+
+          <tr class="group"><td colspan="3">可观测性与 AI 工具</td></tr>
+          <tr><td class="role">智能监控</td><td><span class="company">Datadog</span> <span class="ticker">DDOG</span><span class="pill us">US</span></td><td>AI 增强监控，云原生多场景</td></tr>
+          <tr><td class="role">可观测性</td><td><span class="company">博睿数据</span> <span class="ticker">688229</span><span class="pill cn">A股</span></td><td>APM/IT 监控 + AIOps</td></tr>
+          <tr><td class="role">自动化机器人流程</td><td><span class="company">UiPath</span> <span class="ticker">PATH</span><span class="pill us">US</span></td><td>RPA + AI 结合，自动化场景广</td></tr>
+          <tr><td class="role">消费级 AI 工具</td><td><span class="company">万兴科技</span> <span class="ticker">300624</span><span class="pill cn">A股</span></td><td>视频/PDF/绘图工具 AI 化</td></tr>
+          <tr><td class="role">大模型 + AI 应用</td><td><span class="company">昆仑万维</span> <span class="ticker">300418</span><span class="pill cn">A股</span></td><td>天工大模型 + AI 搜索/音乐/社交</td></tr>
+        </tbody>
+      </table>
+      <div class="exhibit-foot"><strong>研究方法：</strong>覆盖度以 AI 收入或 AI 相关业务披露为筛选门槛；不构成投资建议。</div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 4 — DOWNSTREAM
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第四章 · 下游</div>
+      <h2 class="serif">行业落地：单点突破后的非线性弹性</h2>
+      <p class="lede">下游应用层的兑现节奏最长，但一旦突破，弹性最显著。智能驾驶、机器人、医疗影像、机器视觉是当前确定性相对最高的四条赛道。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 4</div>
+        <div class="exhibit-title serif">下游头部公司对照</div>
+        <div class="exhibit-sub">智能驾驶、机器人、医疗、机器视觉、智能物流</div>
+      </div>
+      <table class="mck">
+        <colgroup>
+          <col style="width:26%"><col style="width:28%"><col style="width:46%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>细分环节</th>
+            <th>代表公司</th>
+            <th>核心定位与备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="group"><td colspan="3">智能驾驶与电动车</td></tr>
+          <tr><td class="role">智能电动车</td><td><span class="company">Tesla</span> <span class="ticker">TSLA</span><span class="pill us">US</span></td><td>FSD + Dojo + Optimus，AI 与车一体化</td></tr>
+          <tr><td class="role">智能电动车</td><td><span class="company">比亚迪</span> <span class="ticker">002594 / 1211.HK</span><span class="pill cn">A+H</span></td><td>"天神之眼"智驾 + 垂直整合 + 海外扩张</td></tr>
+          <tr><td class="role">智能驾驶</td><td><span class="company">小鹏汽车</span> <span class="ticker">XPEV / 9868.HK</span><span class="pill adr">ADR</span></td><td>XNGP 端到端方案落地最快</td></tr>
+          <tr><td class="role">智能电动车</td><td><span class="company">理想汽车</span> <span class="ticker">LI / 2015.HK</span><span class="pill adr">ADR</span></td><td>AD Max 端到端 + 自研 MindGPT</td></tr>
+          <tr><td class="role">智能座舱/ADAS</td><td><span class="company">德赛西威</span> <span class="ticker">002920</span><span class="pill cn">A股</span></td><td>NVIDIA Orin 域控制器主要合作方</td></tr>
+          <tr><td class="role">车载 AI 芯片</td><td><span class="company">地平线</span> <span class="ticker">9660.HK</span><span class="pill hk">港股</span></td><td>征程系列广泛搭载于国产智驾</td></tr>
+
+          <tr class="group"><td colspan="3">机器人与工业自动化</td></tr>
+          <tr><td class="role">工业自动化</td><td><span class="company">ABB</span> <span class="ticker">ABB</span><span class="pill us">EU</span></td><td>AI + 工业机器人，行业自动化升级</td></tr>
+          <tr><td class="role">工业机器人</td><td><span class="company">埃斯顿</span> <span class="ticker">002747</span><span class="pill cn">A股</span></td><td>国产工业机器人本体龙头</td></tr>
+          <tr><td class="role">工业自动化/伺服</td><td><span class="company">汇川技术</span> <span class="ticker">300124</span><span class="pill cn">A股</span></td><td>伺服/PLC 市占率持续提升</td></tr>
+          <tr><td class="role">协作/电梯机器人</td><td><span class="company">新时达</span> <span class="ticker">002527</span><span class="pill cn">A股</span></td><td>SCARA 与协作机器人布局</td></tr>
+
+          <tr class="group"><td colspan="3">医疗 AI 与机器人</td></tr>
+          <tr><td class="role">手术机器人</td><td><span class="company">Intuitive Surgical</span> <span class="ticker">ISRG</span><span class="pill us">US</span></td><td>达芬奇手术机器人 + AI 成像</td></tr>
+          <tr><td class="role">医疗影像 + AI</td><td><span class="company">联影医疗</span> <span class="ticker">688271</span><span class="pill cn">A股</span></td><td>高端 CT/MR 国产替代 + uAI 影像</td></tr>
+          <tr><td class="role">手术机器人</td><td><span class="company">微创医疗</span> <span class="ticker">0853.HK</span><span class="pill hk">港股</span></td><td>图迈腔镜手术机器人商业化推进</td></tr>
+
+          <tr class="group"><td colspan="3">机器视觉与安防</td></tr>
+          <tr><td class="role">机器视觉</td><td><span class="company">Cognex</span> <span class="ticker">CGNX</span><span class="pill us">US</span></td><td>工业检测与视觉 AI 市场领先</td></tr>
+          <tr><td class="role">AI 视觉/安防</td><td><span class="company">海康威视</span> <span class="ticker">002415</span><span class="pill cn">A股</span></td><td>全球安防龙头 + AIoT 扩展</td></tr>
+          <tr><td class="role">AI 视觉/安防</td><td><span class="company">大华股份</span> <span class="ticker">002236</span><span class="pill cn">A股</span></td><td>视觉算法 + 行业解决方案双轮</td></tr>
+          <tr><td class="role">机器视觉部件</td><td><span class="company">奥普特</span> <span class="ticker">688686</span><span class="pill cn">A股</span></td><td>光源/镜头/视觉控制器国产化</td></tr>
+          <tr><td class="role">工业视觉系统</td><td><span class="company">凌云光</span> <span class="ticker">688400</span><span class="pill cn">A股</span></td><td>3C/新能源/印刷领域视觉检测</td></tr>
+
+          <tr class="group"><td colspan="3">智能物流与零售 AI</td></tr>
+          <tr><td class="role">智能物流</td><td><span class="company">Amazon</span> <span class="ticker">AMZN</span><span class="pill us">US</span></td><td>仓储机器人 + 物流 AI 优化</td></tr>
+          <tr><td class="role">智能物流/零售</td><td><span class="company">京东</span> <span class="ticker">JD / 9618.HK</span><span class="pill adr">ADR</span></td><td>仓储机器人 + 言犀大模型 + 供应链</td></tr>
+          <tr><td class="role">本地生活/无人配送</td><td><span class="company">美团</span> <span class="ticker">3690.HK</span><span class="pill hk">港股</span></td><td>无人机/自动配送车 + 大模型客服</td></tr>
+        </tbody>
+      </table>
+      <div class="exhibit-foot"><strong>注：</strong>EU 标识为欧盟注册主体在美股 ADR 上市。</div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 5 — COMPETITIVE HEATMAP
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第五章 · 美中竞争格局</div>
+      <h2 class="serif">分环节定量评分：谁在哪里领先</h2>
+      <p class="lede">用统一的"竞争位势"指标横向打分（10 分制）。该评分综合考虑技术代差、市占率、生态完整度与盈利兑现度，反映当前时点的相对位置，并非未来预测。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 5</div>
+        <div class="exhibit-title serif">美中 AI 产业链分环节竞争位势</div>
+        <div class="exhibit-sub">10 分制 · 数字越高代表该方在该环节竞争位势越强</div>
+      </div>
+      <div class="heatmap">
+        <div class="hm-head">细分环节</div>
+        <div class="hm-head">美国位势</div>
+        <div class="hm-head">中国位势</div>
+        <div class="hm-head">差距方向</div>
+        <div class="hm-head">关键卡点</div>
+
+        <div class="hm-row">先进 GPU / 加速器</div>
+        <div class="hm-cell"><span class="hm-score">9.5</span><span class="hm-bar us"><i style="width:95%"></i></span></div>
+        <div class="hm-cell"><span class="hm-score">4.0</span><span class="hm-bar cn"><i style="width:40%"></i></span></div>
+        <div class="hm-cell"><span class="hm-bar gap"><i style="width:55%"></i></span>美方领先 5.5</div>
+        <div class="hm-cell">CUDA 生态 + EUV 制程</div>
+
+        <div class="hm-row">先进制程代工</div>
+        <div class="hm-cell"><span class="hm-score">9.0</span><span class="hm-bar us"><i style="width:90%"></i></span></div>
+        <div class="hm-cell"><span class="hm-score">5.0</span><span class="hm-bar cn"><i style="width:50%"></i></span></div>
+        <div class="hm-cell"><span class="hm-bar gap"><i style="width:40%"></i></span>美/台领先 4.0</div>
+        <div class="hm-cell">EUV 设备 · CoWoS 封装</div>
+
+        <div class="hm-row">基础大模型</div>
+        <div class="hm-cell"><span class="hm-score">9.0</span><span class="hm-bar us"><i style="width:90%"></i></span></div>
+        <div class="hm-cell"><span class="hm-score">6.5</span><span class="hm-bar cn"><i style="width:65%"></i></span></div>
+        <div class="hm-cell"><span class="hm-bar gap"><i style="width:25%"></i></span>美方领先 2.5</div>
+        <div class="hm-cell">数据飞轮 · 训练算力</div>
+
+        <div class="hm-row">企业级 AI 软件</div>
+        <div class="hm-cell"><span class="hm-score">9.0</span><span class="hm-bar us"><i style="width:90%"></i></span></div>
+        <div class="hm-cell"><span class="hm-score">5.5</span><span class="hm-bar cn"><i style="width:55%"></i></span></div>
+        <div class="hm-cell"><span class="hm-bar gap"><i style="width:35%"></i></span>美方领先 3.5</div>
+        <div class="hm-cell">SaaS 付费习惯 + ARPU</div>
+
+        <div class="hm-row">AI 服务器系统</div>
+        <div class="hm-cell"><span class="hm-score">7.5</span><span class="hm-bar us"><i style="width:75%"></i></span></div>
+        <div class="hm-cell"><span class="hm-score">7.5</span><span class="hm-bar cn"><i style="width:75%"></i></span></div>
+        <div class="hm-cell"><span class="hm-bar gap"><i style="width:5%"></i></span>基本持平</div>
+        <div class="hm-cell">液冷 · 高速互联</div>
+
+        <div class="hm-row">高速光模块</div>
+        <div class="hm-cell"><span class="hm-score">6.5</span><span class="hm-bar us"><i style="width:65%"></i></span></div>
+        <div class="hm-cell"><span class="hm-score">8.5</span><span class="hm-bar cn"><i style="width:85%"></i></span></div>
+        <div class="hm-cell"><span class="hm-bar gap"><i style="width:20%"></i></span>中方领先 2.0</div>
+        <div class="hm-cell">高速光芯片 · CPO</div>
+
+        <div class="hm-row">智能驾驶量产</div>
+        <div class="hm-cell"><span class="hm-score">8.0</span><span class="hm-bar us"><i style="width:80%"></i></span></div>
+        <div class="hm-cell"><span class="hm-score">8.5</span><span class="hm-bar cn"><i style="width:85%"></i></span></div>
+        <div class="hm-cell"><span class="hm-bar gap"><i style="width:5%"></i></span>中方略领先</div>
+        <div class="hm-cell">数据合规 · 监管</div>
+
+        <div class="hm-row">工业机器人</div>
+        <div class="hm-cell"><span class="hm-score">7.0</span><span class="hm-bar us"><i style="width:70%"></i></span></div>
+        <div class="hm-cell"><span class="hm-score">7.5</span><span class="hm-bar cn"><i style="width:75%"></i></span></div>
+        <div class="hm-cell"><span class="hm-bar gap"><i style="width:5%"></i></span>基本持平</div>
+        <div class="hm-cell">高端伺服 · 减速器</div>
+
+        <div class="hm-row">机器视觉 / 安防</div>
+        <div class="hm-cell"><span class="hm-score">7.0</span><span class="hm-bar us"><i style="width:70%"></i></span></div>
+        <div class="hm-cell"><span class="hm-score">9.0</span><span class="hm-bar cn"><i style="width:90%"></i></span></div>
+        <div class="hm-cell"><span class="hm-bar gap"><i style="width:20%"></i></span>中方领先 2.0</div>
+        <div class="hm-cell">海外渠道 · 合规</div>
+      </div>
+      <div class="exhibit-foot"><strong>方法论：</strong>评分基于公开市占率、研发投入、客户结构、产品代差等公开信息综合判断；定性而非定量精确度量，仅用于结构性判断。</div>
+    </div>
+
+    <!-- INSIGHT 2 -->
+    <div class="insight">
+      <div class="label">Key Insight</div>
+      <h3 class="serif">"光模块 + AI 服务器 + 智能驾驶"——中方的三张确定性较高的牌</h3>
+      <p>在 GPU 与基础大模型层面的差距短期难以快速收窄，但 AI 服务器系统集成、800G/1.6T 光模块和电动车智能驾驶量产，是中方供应链有望持续领先甚至定价权外溢的环节。这三条赛道既享受全球 AI 资本支出红利，又不直接面临最前沿出口管制。</p>
+    </div>
+
+    <!-- ============================================================
+         SECTION 6 — WATCHLIST
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第六章 · 投资观察清单</div>
+      <h2 class="serif">9 家结构性赢家与高潜标的</h2>
+      <p class="lede">按"确信度（高/中）"与"逻辑类型（α 弹性 / β 结构）"分类，从超 65 家覆盖标的中精选 9 家。仅作研究观察，不构成投资建议。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 6</div>
+        <div class="exhibit-title serif">高确信度观察清单</div>
+        <div class="exhibit-sub">按价值链分层与市场来源平衡选取</div>
+      </div>
+      <div class="watchlist">
+        <div class="wl-card">
+          <div class="conviction high">高确信 · 结构</div>
+          <h4 class="serif">NVIDIA <span class="tk">NVDA</span></h4>
+          <p class="thesis">CUDA 生态护城河仍在加深，从训练向推理的转向反而进一步绑定客户。短期波动来自估值与节奏，中长期逻辑未变。</p>
+        </div>
+        <div class="wl-card">
+          <div class="conviction high">高确信 · 结构</div>
+          <h4 class="serif">TSMC <span class="tk">TSM</span></h4>
+          <p class="thesis">CoWoS 先进封装与 3nm/2nm 制程的"水电煤"角色无可替代，AI 资本开支放量直接传导。</p>
+        </div>
+        <div class="wl-card">
+          <div class="conviction high">高确信 · 结构</div>
+          <h4 class="serif">Microsoft <span class="tk">MSFT</span></h4>
+          <p class="thesis">Copilot 在企业级用户中是首个被证明能产生 ARPU 提升的 AI 产品。Azure + OpenAI 协同形成正向飞轮。</p>
+        </div>
+        <div class="wl-card">
+          <div class="conviction med">中确信 · α 弹性</div>
+          <h4 class="serif">中际旭创 <span class="tk">300308</span></h4>
+          <p class="thesis">800G/1.6T 光模块的全球供应商集中度高，短期受订单节奏波动，长期景气持续。</p>
+        </div>
+        <div class="wl-card">
+          <div class="conviction med">中确信 · α 弹性</div>
+          <h4 class="serif">工业富联 <span class="tk">601138</span></h4>
+          <p class="thesis">AI 服务器代工的核心环节，与 NVIDIA GB200 出货高度绑定，制造规模优势明显。</p>
+        </div>
+        <div class="wl-card">
+          <div class="conviction med">中确信 · α 弹性</div>
+          <h4 class="serif">Palantir <span class="tk">PLTR</span></h4>
+          <p class="thesis">AIP 在政府与商业两侧客户加速渗透，单客户 ARR 显著放大，但估值已 priced-in 较多。</p>
+        </div>
+        <div class="wl-card">
+          <div class="conviction struct">高潜 · β 结构</div>
+          <h4 class="serif">比亚迪 <span class="tk">002594 / 1211.HK</span></h4>
+          <p class="thesis">智能驾驶 + 出海 + 垂直整合三重逻辑，长期市占率仍有提升空间。</p>
+        </div>
+        <div class="wl-card">
+          <div class="conviction struct">高潜 · β 结构</div>
+          <h4 class="serif">海康威视 <span class="tk">002415</span></h4>
+          <p class="thesis">AIoT + 机器视觉 + 行业方案，盈利稳定的"AI 蓝筹"。海外业务恢复是关键 catalyst。</p>
+        </div>
+        <div class="wl-card">
+          <div class="conviction struct">高潜 · β 结构</div>
+          <h4 class="serif">联影医疗 <span class="tk">688271</span></h4>
+          <p class="thesis">高端医疗影像国产替代 + AI 影像平台，长周期、高壁垒的医疗 AI 赛道核心标的。</p>
+        </div>
+      </div>
+      <div class="exhibit-foot"><strong>分类定义：</strong>"高确信 · 结构" = 产业格局明确、护城河可见；"中确信 · α 弹性" = 受益于 AI 资本开支放量，弹性大于龙头；"高潜 · β 结构" = 长周期国产替代或场景渗透逻辑。</div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 7 — LIVE DATA
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第七章 · 实时数据</div>
+      <h2 class="serif">观察清单实时行情</h2>
+      <p class="lede">下方为代表性标的的实时报价示例。接入金融数据 API（Finnhub / Alpha Vantage / Twelve Data / Polygon / Yahoo Finance）并替换 API Key 后即可生效。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 7</div>
+        <div class="exhibit-title serif">实时报价示例板</div>
+        <div class="exhibit-sub">数据将异步加载；未配置 API Key 时显示占位符</div>
+      </div>
+      <div id="stock-data" class="live-panel"></div>
+      <div class="exhibit-foot"><strong>API 接入：</strong>修改 <code>apiKey</code> 字段；A 股与港股建议使用支持中国市场的数据源，并按交易所代码（如 <code>002594.SZ</code>、<code>1211.HK</code>）传参。</div>
+    </div>
+
+    <!-- ============================================================
+         RISKS
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">附录 · 风险因子</div>
+      <h2 class="serif">六大风险因子</h2>
+      <p class="lede">本研究覆盖范围内的核心下行风险。所有标的均不同程度暴露于以下风险，仓位与节奏管理至关重要。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 8</div>
+        <div class="exhibit-title serif">主要风险因子总览</div>
+      </div>
+      <div class="risks">
+        <div class="risk-card">
+          <h5>出口管制升级</h5>
+          <p>高端 GPU、HBM、先进设备的对华出口管制范围可能进一步扩大，直接影响相关供应链节奏。</p>
+        </div>
+        <div class="risk-card">
+          <h5>资本开支节奏</h5>
+          <p>超大规模云厂商的 AI 资本开支若出现去库存或推迟，将向上游传导，光模块/服务器估值受冲击。</p>
+        </div>
+        <div class="risk-card">
+          <h5>大模型同质化</h5>
+          <p>二三线模型公司的差异化空间在快速缩窄，"模型即产品"路径可能不可持续。</p>
+        </div>
+        <div class="risk-card">
+          <h5>估值高位与回撤</h5>
+          <p>头部 AI 标的估值已显著超出长期均值，短期估值消化压力存在。</p>
+        </div>
+        <div class="risk-card">
+          <h5>能耗与监管约束</h5>
+          <p>AI 数据中心电力与用水需求高速增长，已在多地引发监管与许可问题。</p>
+        </div>
+        <div class="risk-card">
+          <h5>地缘政治冲击</h5>
+          <p>台海局势、跨境数据流动等议题对供应链的潜在冲击需持续监控。</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="doc-footer">
+    <div class="inner">
+      <div>
+        <h6>研究范围与方法</h6>
+        <p>本报告覆盖美股、A股、港股中具备 AI 相关业务披露的代表性公司。竞争位势评分基于公开市占率、研发投入、客户结构与产品代差综合定性判断，非定量精确度量。</p>
+      </div>
+      <div>
+        <h6>数据来源</h6>
+        <p>公司公告 · 行业研究 · 主流金融数据接口（可接入 Finnhub / Alpha Vantage / Twelve Data / Polygon / Yahoo Finance）</p>
+      </div>
+      <div>
+        <h6>更新</h6>
+        <p>静态报告版本 2026.05<br/>实时数据需接入 API Key</p>
+      </div>
+    </div>
+    <div class="inner">
+      <p class="disclaimer">免责声明：本报告内容仅供研究与教育目的使用，不构成任何形式的投资建议、要约或承诺。报告中提及的公司与证券仅为研究举例，不代表对其未来表现的预测或推荐。读者应自行进行独立判断并咨询持牌专业顾问。一切基于本报告作出的投资决策由读者自行承担。</p>
+    </div>
+  </footer>
+
+  <script>
+    // ============================================================
+    // Live data — replace YOUR_API_KEY_HERE with a real key
+    // ============================================================
+    const stocks = [
+      { symbol: 'NVDA',  name: 'NVIDIA' },
+      { symbol: 'MSFT',  name: 'Microsoft' },
+      { symbol: 'GOOGL', name: 'Alphabet' },
+      { symbol: 'TSM',   name: 'TSMC' },
+      { symbol: 'PLTR',  name: 'Palantir' },
+      { symbol: 'SNOW',  name: 'Snowflake' },
+      { symbol: 'BABA',  name: '阿里巴巴' },
+      { symbol: 'BIDU',  name: '百度' },
+      { symbol: 'JD',    name: '京东' },
+      { symbol: 'XPEV',  name: '小鹏汽车' },
+      { symbol: 'LI',    name: '理想汽车' },
+      { symbol: 'TSLA',  name: 'Tesla' }
+    ];
+
+    const apiKey = 'YOUR_API_KEY_HERE';
+    const container = document.getElementById('stock-data');
+
+    function fmtChange(c) {
+      if (c == null || c === '—' || c === 'N/A') return { text: '—', cls: '' };
+      const n = parseFloat(c);
+      if (isNaN(n)) return { text: c, cls: '' };
+      const sign = n >= 0 ? '+' : '';
+      return { text: `${sign}${n.toFixed(2)}%`, cls: n >= 0 ? 'up' : 'dn' };
+    }
+
+    function renderCard(stock, data) {
+      const change = fmtChange(data?.change);
+      const card = document.createElement('div');
+      card.className = 'live-card';
+      card.innerHTML = `
+        <div><span class="lc-name">${stock.name}</span><span class="lc-ticker">${stock.symbol}</span></div>
+        <div class="lc-price">${data?.price ?? '—'}</div>
+        <div class="lc-change ${change.cls}">${change.text}</div>
+        <div class="lc-time">${data?.timestamp ?? '等待数据接入'}</div>
+      `;
+      return card;
+    }
+
+    async function fetchStock(symbol) {
+      if (apiKey === 'YOUR_API_KEY_HERE') {
+        return { price: '—', change: '—', timestamp: '请配置 API Key' };
+      }
+      const url = `https://api.twelvedata.com/quote?symbol=${symbol}&apikey=${apiKey}`;
+      try {
+        const resp = await fetch(url);
+        const result = await resp.json();
+        if (result && result.price) {
+          return {
+            price: parseFloat(result.price).toFixed(2),
+            change: result.percent_change || result.change,
+            timestamp: result.datetime || new Date().toLocaleString('zh-CN')
+          };
         }
+        return { price: '—', change: '—', timestamp: '加载失败' };
+      } catch (error) {
+        return { price: '—', change: '—', timestamp: '网络错误' };
+      }
+    }
 
-        async function fetchStock(symbol) {
-          // 示例使用 Twelve Data 免费API，实际可改为其他服务
-          const url = `https://api.twelvedata.com/quote?symbol=${symbol}&apikey=${apiKey}`;
-          try {
-            const resp = await fetch(url);
-            const result = await resp.json();
-            if (result && result.price) {
-              return {
-                price: result.price,
-                change: result.change_percent || result.change,
-                timestamp: result.datetime || new Date().toLocaleString()
-              };
-            }
-            return { price: '加载失败', change: 'N/A', timestamp: new Date().toLocaleString() };
-          } catch (error) {
-            return { price: '错误', change: '错误', timestamp: new Date().toLocaleString() };
-          }
-        }
+    async function loadStocks() {
+      container.innerHTML = '';
+      for (const stock of stocks) {
+        container.appendChild(renderCard(stock, { price: '—', change: '—', timestamp: '加载中…' }));
+      }
+      const cards = container.children;
+      for (let i = 0; i < stocks.length; i++) {
+        const data = await fetchStock(stocks[i].symbol);
+        cards[i].replaceWith(renderCard(stocks[i], data));
+      }
+    }
 
-        async function loadStocks() {
-          container.innerHTML = '';
-          for (const stock of stocks) {
-            const data = await fetchStock(stock.symbol);
-            container.appendChild(renderCard(stock, data));
-          }
-        }
-
-        loadStocks();
-      </script>
-    </section>
-
-    <footer class="footer">
-      <p>建议结合实时财经数据源与AI行业研究，把此页面作为系统化监控与分析的起点。</p>
-    </footer>
-  </div>
+    loadStocks();
+  </script>
 </body>
 </html>
