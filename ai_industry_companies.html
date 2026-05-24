@@ -666,6 +666,576 @@
       border-top: 1px solid var(--grey-200);
     }
 
+    /* ========== Prose Block ========== */
+    .prose {
+      max-width: 820px;
+      font-size: 0.96rem;
+      color: var(--grey-900);
+      line-height: 1.7;
+      margin: 18px 0 28px;
+    }
+    .prose p { margin: 0 0 14px; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { color: var(--navy-900); font-weight: 600; }
+    .prose em.highlight {
+      background: linear-gradient(transparent 55%, rgba(242, 169, 0, 0.35) 55%);
+      font-style: normal;
+    }
+
+    /* ========== Capex Bar Chart ========== */
+    .capex { margin-top: 8px; }
+    .capex-row {
+      display: grid;
+      grid-template-columns: 160px 1fr 90px;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--grey-100);
+      font-size: 0.85rem;
+    }
+    .capex-row:last-child { border-bottom: none; }
+    .capex-row .name { font-weight: 600; color: var(--navy-900); }
+    .capex-row .name span {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--grey-500);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .capex-bar-track {
+      display: flex;
+      gap: 3px;
+      height: 26px;
+      align-items: center;
+    }
+    .capex-seg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8px;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      min-width: 36px;
+      font-family: Consolas, monospace;
+    }
+    .capex-seg.y1 { background: var(--navy-500); opacity: 0.72; }
+    .capex-seg.y2 { background: var(--navy-700); }
+    .capex-seg.y3 { background: var(--blue); }
+    .capex-row .total {
+      font-family: Georgia, serif;
+      font-weight: 600;
+      text-align: right;
+      color: var(--navy-900);
+      font-size: 0.95rem;
+    }
+    .capex-legend {
+      display: flex;
+      gap: 22px;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--grey-200);
+      font-size: 0.78rem;
+      color: var(--grey-700);
+    }
+    .capex-legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .capex-legend i { display: inline-block; width: 14px; height: 12px; }
+
+    /* ========== Bottleneck Map ========== */
+    .bottleneck {
+      display: grid;
+      grid-template-columns: 200px 110px 110px 1fr;
+      border: 1px solid var(--grey-200);
+      font-size: 0.85rem;
+    }
+    .bottleneck > div {
+      padding: 11px 14px;
+      border-right: 1px solid var(--grey-200);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    .bottleneck > div:nth-child(4n) { border-right: none; }
+    .bottleneck .bn-head {
+      background: var(--navy-900);
+      color: #fff;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .bottleneck .bn-row {
+      font-weight: 600;
+      color: var(--navy-900);
+      background: var(--grey-50);
+    }
+    .severity {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 2px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .severity.critical { background: #FCE6E9; color: var(--crimson); }
+    .severity.tight { background: #FFE9CC; color: #A85800; }
+    .severity.moderate { background: #FFF6D6; color: #8A6800; }
+    .severity.eased { background: #E6F2E6; color: #1F6A1F; }
+
+    /* ========== Monetization Table ========== */
+    .moneti { border-top: 2px solid var(--navy-900); }
+    .moneti-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 150px 110px;
+      gap: 18px;
+      padding: 14px 4px;
+      border-bottom: 1px solid var(--grey-200);
+      font-size: 0.88rem;
+      align-items: flex-start;
+    }
+    .moneti-row.head {
+      border-bottom: 1px solid var(--grey-300);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy-700);
+      font-weight: 700;
+      padding: 10px 4px;
+    }
+    .moneti-row .product { color: var(--navy-900); font-weight: 600; }
+    .moneti-row .product em { display: block; font-style: normal; font-size: 0.76rem; color: var(--grey-500); margin-top: 2px; }
+    .moneti-row .desc { color: var(--grey-700); line-height: 1.5; }
+    .moneti-row .price { font-family: Consolas, monospace; color: var(--navy-700); font-weight: 600; font-size: 0.82rem; }
+    .moneti-row .lift {
+      font-family: Georgia, serif;
+      font-weight: 700;
+      text-align: right;
+      font-size: 1rem;
+    }
+    .moneti-row .lift.h { color: var(--crimson); }
+    .moneti-row .lift.m { color: #A85800; }
+    .moneti-row .lift.l { color: var(--green); }
+
+    /* ========== Time-to-Revenue Timeline ========== */
+    .tl-axis {
+      display: grid;
+      grid-template-columns: 220px repeat(5, 1fr);
+      font-size: 0.7rem;
+      color: var(--grey-700);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-bottom: 2px solid var(--navy-900);
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+    }
+    .tl-axis div { text-align: center; padding: 0 4px; }
+    .tl-axis div:first-child { text-align: left; }
+    .tl-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--grey-100);
+      font-size: 0.88rem;
+      align-items: center;
+    }
+    .tl-row:last-child { border-bottom: none; }
+    .tl-row .tl-label { color: var(--navy-900); font-weight: 600; padding-right: 12px; }
+    .tl-row .tl-label em { display: block; font-style: normal; font-size: 0.74rem; color: var(--grey-500); margin-top: 2px; font-weight: 500; }
+    .tl-bar {
+      position: relative;
+      height: 28px;
+      background: var(--grey-100);
+    }
+    .tl-bar .seg {
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+    }
+    .tl-bar .pilot { background: var(--grey-500); }
+    .tl-bar .scaling { background: var(--amber); color: #000; }
+    .tl-bar .mature { background: var(--green); }
+    .tl-bar .future { background: repeating-linear-gradient(45deg, var(--grey-300), var(--grey-300) 6px, var(--grey-100) 6px, var(--grey-100) 12px); color: var(--grey-700); }
+    .tl-legend {
+      display: flex;
+      gap: 22px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--grey-200);
+      font-size: 0.78rem;
+      color: var(--grey-700);
+    }
+    .tl-legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .tl-legend i { display: inline-block; width: 18px; height: 12px; }
+
+    /* ========== Scenarios ========== */
+    .scenarios {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .sc-card {
+      border: 1px solid var(--grey-200);
+      padding: 22px 22px 24px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .sc-card.base { border-top: 4px solid var(--blue); }
+    .sc-card.full { border-top: 4px solid var(--crimson); }
+    .sc-card.conv { border-top: 4px solid var(--green); }
+    .sc-card .prob {
+      font-family: Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--navy-900);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .sc-card .lbl {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      font-weight: 700;
+      margin: 6px 0 12px;
+    }
+    .sc-card h4 {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--navy-900);
+      margin: 0 0 10px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .sc-card .body { font-size: 0.86rem; color: var(--grey-700); margin: 0 0 14px; line-height: 1.55; flex: 1; }
+    .sc-card .impact {
+      font-size: 0.8rem;
+      color: var(--navy-900);
+      border-top: 1px dashed var(--grey-300);
+      padding-top: 12px;
+      line-height: 1.5;
+    }
+    .sc-card .impact strong {
+      display: block;
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    /* ========== Bull / Base / Bear ========== */
+    .bbb {
+      border: 1px solid var(--grey-200);
+      font-size: 0.86rem;
+    }
+    .bbb-row {
+      display: grid;
+      grid-template-columns: 220px repeat(3, 1fr);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    .bbb-row:last-child { border-bottom: none; }
+    .bbb-row > div {
+      padding: 14px 16px;
+      border-right: 1px solid var(--grey-200);
+    }
+    .bbb-row > div:last-child { border-right: none; }
+    .bbb-row.head > div {
+      background: var(--navy-900);
+      color: #fff;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .bbb-row.head .bull { background: var(--green); }
+    .bbb-row.head .base { background: var(--navy-700); }
+    .bbb-row.head .bear { background: var(--crimson); }
+    .bbb-row .theme {
+      background: var(--grey-50);
+      font-weight: 600;
+      color: var(--navy-900);
+      font-size: 0.92rem;
+    }
+    .bbb-row .theme em {
+      display: block;
+      font-style: normal;
+      font-size: 0.7rem;
+      color: var(--grey-500);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      font-weight: 700;
+    }
+    .bbb-row .scen { color: var(--grey-700); line-height: 1.55; }
+    .bbb-row .scen strong { display: block; color: var(--navy-900); margin-bottom: 4px; font-size: 0.8rem; }
+
+    /* ========== Catalyst Calendar ========== */
+    .catalyst { margin-top: 4px; }
+    .cat-row {
+      display: grid;
+      grid-template-columns: 140px 100px 1fr;
+      gap: 18px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--grey-200);
+      font-size: 0.88rem;
+      align-items: flex-start;
+    }
+    .cat-row:first-child { border-top: 2px solid var(--navy-900); padding-top: 14px; }
+    .cat-row .date {
+      font-family: Georgia, serif;
+      color: var(--navy-700);
+      font-weight: 600;
+    }
+    .cat-row .tag {
+      font-size: 0.64rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 3px 7px;
+      text-align: center;
+      border-radius: 2px;
+      height: fit-content;
+    }
+    .cat-row .tag.earn { background: #E8F0FF; color: var(--blue); }
+    .cat-row .tag.prod { background: #FFF3D6; color: #8A6800; }
+    .cat-row .tag.pol { background: #FCE6E9; color: var(--crimson); }
+    .cat-row .tag.macro { background: #E6F7F5; color: #007873; }
+    .cat-row .desc { color: var(--grey-900); line-height: 1.55; }
+    .cat-row .desc em {
+      font-style: normal;
+      display: block;
+      color: var(--grey-500);
+      font-size: 0.78rem;
+      margin-top: 2px;
+    }
+
+    /* ========== Portfolio Framework ========== */
+    .portfolio {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .port-stack {
+      display: flex;
+      height: 64px;
+      border: 1px solid var(--grey-200);
+      margin-bottom: 22px;
+    }
+    .port-seg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.82rem;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 4px;
+      line-height: 1.2;
+    }
+    .port-seg:last-child { border-right: none; }
+    .port-seg .pct { font-family: Georgia, serif; font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
+    .port-seg .lbl { font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.88; }
+    .port-seg.s1 { background: var(--navy-900); }
+    .port-seg.s2 { background: var(--navy-700); }
+    .port-seg.s3 { background: var(--navy-500); }
+    .port-seg.s4 { background: var(--grey-300); color: var(--navy-900); }
+    .port-detail {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.86rem;
+    }
+    .port-detail > li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--grey-200);
+    }
+    .port-detail > li:last-child { border-bottom: none; }
+    .port-detail .head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .port-detail .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .port-detail .dot.s1 { background: var(--navy-900); }
+    .port-detail .dot.s2 { background: var(--navy-700); }
+    .port-detail .dot.s3 { background: var(--navy-500); }
+    .port-detail .dot.s4 { background: var(--grey-300); border: 1px solid var(--grey-500); }
+    .port-detail .head strong {
+      font-family: Georgia, serif;
+      color: var(--navy-900);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .port-detail .head .w {
+      font-family: Consolas, monospace;
+      color: var(--grey-500);
+      font-size: 0.78rem;
+      margin-left: auto;
+    }
+    .port-detail .desc { color: var(--grey-700); line-height: 1.5; padding-left: 22px; }
+
+    /* ========== Glossary ========== */
+    .glossary {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 36px;
+    }
+    .gl-row {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--grey-100);
+      font-size: 0.86rem;
+    }
+    .gl-row dt {
+      font-family: Consolas, monospace;
+      color: var(--navy-700);
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+    .gl-row dd {
+      margin: 0;
+      color: var(--grey-700);
+      line-height: 1.5;
+    }
+
+    /* ========== Five-Layer Cake ========== */
+    .cake {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin: 28px 0 8px;
+    }
+    .cake-layer {
+      display: grid;
+      grid-template-columns: 220px 1fr 200px;
+      gap: 24px;
+      padding: 20px 28px;
+      color: #fff;
+      align-items: center;
+      position: relative;
+    }
+    .cake-layer.l5 { width: 58%; background: var(--blue); }
+    .cake-layer.l4 { width: 70%; background: var(--navy-500); }
+    .cake-layer.l3 { width: 82%; background: var(--navy-700); }
+    .cake-layer.l2 { width: 92%; background: var(--navy-900); }
+    .cake-layer.l1 { width: 100%; background: #02101A; }
+    .cake-layer .lhead { display: flex; align-items: baseline; gap: 14px; }
+    .cake-layer .lnum {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--amber);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .cake-layer .lname {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .cake-layer .lname em {
+      display: block;
+      font-style: normal;
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-top: 4px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 500;
+    }
+    .cake-layer .lbody {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      opacity: 0.94;
+    }
+    .cake-layer .lbody .tk {
+      display: block;
+      margin-top: 8px;
+      font-family: Consolas, monospace;
+      font-size: 0.74rem;
+      opacity: 0.72;
+      letter-spacing: 0.02em;
+    }
+    .cake-layer .lstatus {
+      text-align: right;
+      font-size: 0.78rem;
+      opacity: 0.88;
+    }
+    .cake-layer .lstatus .cash {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: var(--amber);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .cake-layer .lstatus .moat {
+      display: block;
+      font-size: 0.72rem;
+      opacity: 0.75;
+      margin-top: 4px;
+    }
+    .cake-axis-r {
+      position: absolute;
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .cake-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--grey-200);
+    }
+    .cake-summary > div {
+      font-size: 0.86rem;
+      color: var(--grey-700);
+      line-height: 1.55;
+    }
+    .cake-summary > div strong {
+      display: block;
+      color: var(--navy-900);
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
     /* ========== Responsive ========== */
     @media (max-width: 880px) {
       .cover h1 { font-size: 2.1rem; }
@@ -682,6 +1252,22 @@
       .wl-card { border-right: none; border-bottom: 1px solid var(--grey-200); }
       .risks { grid-template-columns: 1fr; }
       .doc-footer .inner { grid-template-columns: 1fr; }
+      .capex-row { grid-template-columns: 110px 1fr; }
+      .capex-row .total { display: none; }
+      .bottleneck { grid-template-columns: 140px 90px 90px 1fr; font-size: 0.76rem; }
+      .moneti-row { grid-template-columns: 1fr; gap: 6px; padding: 14px 4px; }
+      .tl-axis { grid-template-columns: 130px repeat(5, 1fr); font-size: 0.6rem; }
+      .tl-row { grid-template-columns: 130px 1fr; font-size: 0.78rem; }
+      .scenarios { grid-template-columns: 1fr; }
+      .bbb-row { grid-template-columns: 1fr; }
+      .bbb-row > div { border-right: none; border-bottom: 1px solid var(--grey-100); }
+      .bbb-row > div:last-child { border-bottom: none; }
+      .cat-row { grid-template-columns: 100px 80px 1fr; gap: 10px; }
+      .portfolio { grid-template-columns: 1fr; gap: 28px; }
+      .glossary { grid-template-columns: 1fr; }
+      .cake-layer { width: 100% !important; grid-template-columns: 1fr; padding: 16px 18px; gap: 10px; }
+      .cake-layer .lstatus { text-align: left; }
+      .cake-summary { grid-template-columns: 1fr; gap: 16px; }
     }
 
     @media print {
@@ -699,7 +1285,7 @@
     <div class="inner">
       <div class="brand">AI<span class="accent"> · </span>Investment Research</div>
       <h1 class="serif">AI 产业链投资全景<br/>美中双市场对标研究</h1>
-      <p class="subtitle">从上游算力基础设施，到中游模型与平台，再到下游行业落地——梳理 65+ 上市公司在 AI 价值链上的核心定位与可比关系，识别结构性赢家与高潜标的。</p>
+      <p class="subtitle">沿"五层蛋糕"模型——能源 · 硬件 · 模型 · 应用 · 终端——拆解 65+ 上市公司的 AI 价值链定位、卡点供应紧张度、SaaS 变现路径、下游兑现时间表与组合构建框架。</p>
       <div class="meta">
         <div>
           <div class="label">报告类型</div>
@@ -729,7 +1315,7 @@
       <div class="col-left">
         <div class="eyebrow">执行摘要</div>
         <h2 class="serif">五个核心判断</h2>
-        <p>基于价值链结构、竞争格局与资本市场反应的横向比较，我们就当前 AI 投资周期形成以下判断。每条判断都对应本报告后续章节中的具体证据与公司清单。</p>
+        <p>基于价值链结构、竞争格局与资本市场反应的横向比较，我们就当前 AI 投资周期形成以下判断。每条判断都对应本报告后续章节中的具体证据与公司清单；第九章用"五层蛋糕"模型把全部分析压缩到一张图。</p>
       </div>
       <div class="col-right">
         <ol>
@@ -747,12 +1333,12 @@
       <div>
         <div class="label">覆盖公司</div>
         <div class="value serif">65<sup>+</sup></div>
-        <div class="detail">跨美股、A股、港股的代表性上市公司</div>
+        <div class="detail">美股、A 股、港股、中概 ADR</div>
       </div>
       <div>
-        <div class="label">价值链层级</div>
-        <div class="value serif">3</div>
-        <div class="detail">上游 · 中游 · 下游 + 关键卡点环节</div>
+        <div class="label">Exhibit 数量</div>
+        <div class="value serif">18</div>
+        <div class="detail">含价值链 · 卡点 · 变现 · 情景 · 蛋糕模型</div>
       </div>
       <div>
         <div class="label">高确信度标的</div>
@@ -760,9 +1346,9 @@
         <div class="detail">穿越短期波动的结构性赢家</div>
       </div>
       <div>
-        <div class="label">主要风险因子</div>
-        <div class="value serif">6</div>
-        <div class="detail">监管、出口管制、能耗、估值、节奏、地缘</div>
+        <div class="label">综合框架</div>
+        <div class="value serif">5</div>
+        <div class="detail">能源 · 硬件 · 模型 · 应用 · 终端 (五层蛋糕)</div>
       </div>
     </div>
 
@@ -824,14 +1410,89 @@
           </ul>
         </div>
       </div>
-      <div class="exhibit-foot"><strong>资料来源：</strong>公司公告、产业访谈，研究整理。"卡点"指当前供需错配显著、上下游议价权外溢的细分环节，详见 Exhibit 5。</div>
+      <div class="exhibit-foot"><strong>资料来源：</strong>公司公告、产业访谈，研究整理。"卡点"指当前供需错配显著、上下游议价权外溢的细分环节，详见 Exhibit 4。</div>
+    </div>
+
+    <div class="prose">
+      <p>三层之间的现金流时序差异决定了不同的投资逻辑。<strong>上游</strong>已进入"超大规模云厂商加码 → 芯片与服务器订单同步放量"的兑现阶段，是过去 24 个月超额收益最集中的环节；<strong>中游</strong>正在经历"模型同质化 + 应用分化"的双重变化，仅头部几家有能力把模型能力转化为 ARPU 提升；<strong>下游</strong>除智能驾驶之外，多数赛道仍在"试点—量产"过渡期，弹性大但兑现节奏拉长。</p>
+      <p>判断 AI 投资周期是否仍处于早期，最直观的代理变量是<em class="highlight">超大规模云厂商的资本开支轨迹</em>。Exhibit 2 给出过去三年的实际开支与已公告的 2025 指引，结构性扩张仍在继续。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 2</div>
+        <div class="exhibit-title serif">超大规模云厂商 AI 资本开支：仍处于上升通道</div>
+        <div class="exhibit-sub">2023–2025 年资本开支（US$ B，含全部数据中心 capex；中国云厂商口径含三家加总）</div>
+      </div>
+      <div class="capex">
+        <div class="capex-row">
+          <div class="name">Microsoft<span>MSFT · 美股</span></div>
+          <div class="capex-bar-track">
+            <div class="capex-seg y1" style="flex: 32">$32</div>
+            <div class="capex-seg y2" style="flex: 56">$56</div>
+            <div class="capex-seg y3" style="flex: 80">$80</div>
+          </div>
+          <div class="total">+150%</div>
+        </div>
+        <div class="capex-row">
+          <div class="name">Alphabet<span>GOOGL · 美股</span></div>
+          <div class="capex-bar-track">
+            <div class="capex-seg y1" style="flex: 32">$32</div>
+            <div class="capex-seg y2" style="flex: 52">$52</div>
+            <div class="capex-seg y3" style="flex: 75">$75</div>
+          </div>
+          <div class="total">+134%</div>
+        </div>
+        <div class="capex-row">
+          <div class="name">Amazon<span>AMZN · 美股</span></div>
+          <div class="capex-bar-track">
+            <div class="capex-seg y1" style="flex: 48">$48</div>
+            <div class="capex-seg y2" style="flex: 83">$83</div>
+            <div class="capex-seg y3" style="flex: 105">$105</div>
+          </div>
+          <div class="total">+119%</div>
+        </div>
+        <div class="capex-row">
+          <div class="name">Meta<span>META · 美股</span></div>
+          <div class="capex-bar-track">
+            <div class="capex-seg y1" style="flex: 28">$28</div>
+            <div class="capex-seg y2" style="flex: 40">$40</div>
+            <div class="capex-seg y3" style="flex: 65">$65</div>
+          </div>
+          <div class="total">+132%</div>
+        </div>
+        <div class="capex-row">
+          <div class="name">中国云<span>BABA + Tencent + BIDU</span></div>
+          <div class="capex-bar-track">
+            <div class="capex-seg y1" style="flex: 15">$15</div>
+            <div class="capex-seg y2" style="flex: 25">$25</div>
+            <div class="capex-seg y3" style="flex: 42">$42</div>
+          </div>
+          <div class="total">+180%</div>
+        </div>
+        <div class="capex-row" style="border-top: 2px solid var(--navy-900); border-bottom: none; padding-top: 14px; margin-top: 8px;">
+          <div class="name">合计<span>SUM</span></div>
+          <div class="capex-bar-track">
+            <div class="capex-seg y1" style="flex: 155">$155</div>
+            <div class="capex-seg y2" style="flex: 256">$256</div>
+            <div class="capex-seg y3" style="flex: 367">$367</div>
+          </div>
+          <div class="total">+137%</div>
+        </div>
+        <div class="capex-legend">
+          <span><i style="background:var(--navy-500);opacity:0.72"></i> 2023 实际</span>
+          <span><i style="background:var(--navy-700)"></i> 2024 实际</span>
+          <span><i style="background:var(--blue)"></i> 2025 指引/估算</span>
+        </div>
+      </div>
+      <div class="exhibit-foot"><strong>资料来源：</strong>各公司季报与电话会指引、行业整理。<strong>关键解读：</strong>五大主体 2023→2025 capex 翻倍以上，绝对增量 ~$210B，其中 60%+ 直接流向 AI 加速基础设施（GPU、HBM、网络、电力、冷却）。<strong>对投资者意味着：</strong>上游"卖铲子"环节订单仍处于上升通道；同时也意味着任何资本开支节奏的边际放缓将首先冲击上游股票。</div>
     </div>
 
     <!-- INSIGHT CALLOUT -->
     <div class="insight">
       <div class="label">Key Insight</div>
       <h3 class="serif">"卖铲子" 仍是 2026 年最确定的逻辑——但"铲子"已不止 GPU</h3>
-      <p>过去 18 个月，超额收益高度集中在 NVIDIA。下一阶段，市场将重新审视那些"GPU 出货必须放量"的关联环节：HBM、CoWoS 先进封装、800G/1.6T 光模块、AI 数据中心电源与液冷。它们在估值上仍低于核心 GPU，但订单弹性可能更高。</p>
+      <p>过去 18 个月，超额收益高度集中在 NVIDIA。下一阶段，市场将重新审视那些"GPU 出货必须放量"的关联环节：HBM、CoWoS 先进封装、800G/1.6T 光模块、AI 数据中心电源与液冷。它们在估值上仍低于核心 GPU，但订单弹性可能更高——这正是 Exhibit 4 要回答的问题。</p>
     </div>
 
     <!-- ============================================================
@@ -843,9 +1504,14 @@
       <p class="lede">上游是 AI 投资中确定性最高、但同时也是地缘扰动最敏感的层级。美方在尖端 GPU 与设备保持代际领先；中方依靠"成熟制程 + 服务器系统 + 光模块"形成另一条可商业化的路径。</p>
     </div>
 
+    <div class="prose">
+      <p>上游可拆解为五个相互依存的子层：<strong>芯片设计</strong>（GPU/ASIC）、<strong>晶圆制造</strong>（先进 + 成熟制程）、<strong>半导体设备</strong>（光刻、刻蚀、薄膜、量测）、<strong>系统集成</strong>（AI 服务器、光网络、电力、液冷），以及<strong>云算力平台</strong>（Hyperscaler + 国家云）。一颗 NVIDIA H100/H200 GPU 的物料价值中，约 30% 来自 HBM、20% 来自 CoWoS 先进封装，其余包括逻辑芯片本体、基板、电源管理与组装。<em class="highlight">真正决定 GPU 出货节奏的，往往不是台积电的晶圆产能，而是 HBM 和 CoWoS。</em></p>
+      <p>从竞争格局看：尖端 GPU（≤4nm 制程 + HBM3e）的供应几乎完全由 NVIDIA + TSMC + SK Hynix/三星/Micron + ASML 形成的"四国五方"链条主导；中国的可商业化路径主要落在成熟制程国产替代、AI 服务器系统集成、光模块/液冷、与"信创"专用算力四条相对独立的赛道上。</p>
+    </div>
+
     <div class="exhibit">
       <div class="exhibit-head">
-        <div class="exhibit-tag">Exhibit 2</div>
+        <div class="exhibit-tag">Exhibit 3</div>
         <div class="exhibit-title serif">上游头部公司对照</div>
         <div class="exhibit-sub">按细分环节列出美中代表性公司及核心定位</div>
       </div>
@@ -897,6 +1563,76 @@
       <div class="exhibit-foot"><strong>注：</strong>US = 美股；A 股 = 沪深；A+H = 同时在 A 股与港股上市；ADR = 美国存托凭证。代码栏中 / 分隔双重上市编号。</div>
     </div>
 
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 4</div>
+        <div class="exhibit-title serif">关键卡点供应紧张度地图</div>
+        <div class="exhibit-sub">按供需失衡程度对核心环节打分，识别"卖铲子"机会的具体落点</div>
+      </div>
+      <div class="bottleneck">
+        <div class="bn-head">环节</div>
+        <div class="bn-head">紧张度</div>
+        <div class="bn-head">缓解时点</div>
+        <div class="bn-head">主要供应商与受益标的</div>
+
+        <div class="bn-row">HBM3e / HBM4 高带宽内存</div>
+        <div><span class="severity critical">极度紧张</span></div>
+        <div>2026H2 后</div>
+        <div>SK Hynix (主导 50%+) · Samsung · Micron。AI 芯片单位价值的 30% 来自 HBM，是当前最大产能瓶颈。</div>
+
+        <div class="bn-row">CoWoS 先进封装</div>
+        <div><span class="severity critical">极度紧张</span></div>
+        <div>2026E</div>
+        <div>TSMC 几乎独家；扩产节奏决定 NVIDIA H100/B100 出货上限。封测代工：ASE、Amkor。</div>
+
+        <div class="bn-row">先进逻辑制程 (≤4nm)</div>
+        <div><span class="severity tight">紧张</span></div>
+        <div>2026–2027</div>
+        <div>TSMC 主导 · Samsung Foundry 追赶 · Intel Foundry 试产。2nm 节点 2025 量产。</div>
+
+        <div class="bn-row">EUV 光刻设备</div>
+        <div><span class="severity critical">极度紧张</span></div>
+        <div>2027 后</div>
+        <div>ASML 独家垄断，High-NA EUV 2024 出货爬坡，单价 $350M+。</div>
+
+        <div class="bn-row">800G / 1.6T 光模块</div>
+        <div><span class="severity tight">紧张</span></div>
+        <div>2026H1</div>
+        <div>中际旭创 · 新易盛 · Coherent · Lumentum。AI 数据中心横向扩张直接拉动。</div>
+
+        <div class="bn-row">AI 数据中心电力</div>
+        <div><span class="severity tight">紧张</span></div>
+        <div>2027–2028</div>
+        <div>Vertiv · Schneider · Eaton；电源芯片：Monolithic · 杰华特。多地审批受限。</div>
+
+        <div class="bn-row">液冷散热</div>
+        <div><span class="severity tight">紧张</span></div>
+        <div>2026E</div>
+        <div>Vertiv · 英维克 · 高澜股份 · 同飞股份。GB200 强制液冷，渗透率快速提升。</div>
+
+        <div class="bn-row">AI 服务器整机</div>
+        <div><span class="severity moderate">中度</span></div>
+        <div>2026E</div>
+        <div>Supermicro · Dell · HPE · 工业富联 · 浪潮信息。代工产能可弹性扩张。</div>
+
+        <div class="bn-row">高速基板与 ABF 载板</div>
+        <div><span class="severity moderate">中度</span></div>
+        <div>2026E</div>
+        <div>Ibiden · Unimicron · 兴森科技 · 深南电路。</div>
+
+        <div class="bn-row">推理用 GPU (L40, RTX 系列)</div>
+        <div><span class="severity moderate">中度</span></div>
+        <div>2026H1</div>
+        <div>NVIDIA · AMD MI300X · 寒武纪 · 海光 DCU。供需较训练 GPU 缓解。</div>
+
+        <div class="bn-row">成熟制程晶圆 (28nm+)</div>
+        <div><span class="severity eased">已缓解</span></div>
+        <div>当前过剩</div>
+        <div>TSMC · 中芯国际 · 华虹。AI 周边器件受益于成熟制程价格下行。</div>
+      </div>
+      <div class="exhibit-foot"><strong>评级方法：</strong>"极度紧张" = 供应商订单已 priced-in 至 2026 年；"紧张" = 旺季订单需排队；"中度" = 可加单但价格刚性；"已缓解" = 价格进入下行通道。<strong>投资含义：</strong>极度紧张环节具备最强定价权但估值充分；中度紧张环节弹性最大；已缓解环节关注成本传导。</div>
+    </div>
+
     <!-- ============================================================
          SECTION 3 — MIDSTREAM
          ============================================================ -->
@@ -906,9 +1642,15 @@
       <p class="lede">基础模型层的"赢者通吃"已基本明朗；企业级 AI 软件的兑现速度则在加快，"AI + SaaS" 提价路径已可量化。中国市场在场景丰富度与数据规模上具备结构性优势。</p>
     </div>
 
+    <div class="prose">
+      <p>中游需要分成两类公司来看：<strong>"模型即产品"型</strong>（OpenAI、Anthropic、Mistral、商汤、月之暗面等）依靠 API 调用与订阅变现，护城河在于训练算力与数据飞轮；<strong>"AI 增强型 SaaS"</strong>（Microsoft、Salesforce、ServiceNow、Adobe、用友、金山）将大模型能力嵌入既有产品，护城河在于客户关系、工作流与数据所有权。</p>
+      <p>过去 12 个月最显著的变化是：<em class="highlight">"AI 增强型 SaaS" 已开始将模型能力定量转化为 ARPU 提升</em>。Microsoft 365 Copilot 以 $30/座位/月的附加费在 E3/E5 客户中落地，对 Microsoft 而言相当于将单座位订阅收入翻倍。这一兑现路径的明确，使得 SaaS 板块在 AI 周期中的角色从"被 AI 颠覆"重新定位为"通过 AI 提价"。</p>
+      <p>反观纯模型公司，OpenAI 的年化收入已突破 $35B，但训练 + 推理 + 数据成本之高使其至今仍未实现 GAAP 盈利。<strong>商业化效率（每美元 AI 投入产生多少边际利润）正在成为新的胜负手</strong>，而拥有现成销售渠道与既定客户基础的"AI 增强型 SaaS"在这条赛道上具备结构性优势。</p>
+    </div>
+
     <div class="exhibit">
       <div class="exhibit-head">
-        <div class="exhibit-tag">Exhibit 3</div>
+        <div class="exhibit-tag">Exhibit 5</div>
         <div class="exhibit-title serif">中游头部公司对照</div>
         <div class="exhibit-sub">模型、企业 AI 平台、数据云与垂直 SaaS</div>
       </div>
@@ -960,6 +1702,71 @@
       <div class="exhibit-foot"><strong>研究方法：</strong>覆盖度以 AI 收入或 AI 相关业务披露为筛选门槛；不构成投资建议。</div>
     </div>
 
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 6</div>
+        <div class="exhibit-title serif">"AI 增强型 SaaS" 的变现路径与 ARPU 提升幅度</div>
+        <div class="exhibit-sub">头部 SaaS 厂商将大模型能力定价化的具体方式与对单客户 ARPU 的边际影响</div>
+      </div>
+      <div class="moneti">
+        <div class="moneti-row head">
+          <div>产品 / 厂商</div>
+          <div>变现方式</div>
+          <div>定价</div>
+          <div style="text-align:right">ARPU 提升</div>
+        </div>
+        <div class="moneti-row">
+          <div class="product">Microsoft 365 Copilot<em>MSFT</em></div>
+          <div class="desc">在 E3/E5/Business 订阅基础上加售的座位级附加费，全集成 Word/Excel/Outlook/Teams/PowerPoint。<br/><em style="display:block;color:var(--grey-500);font-size:0.78rem;margin-top:6px">最具代表性的 "SaaS + AI = 提价" 案例</em></div>
+          <div class="price">$30/座位/月</div>
+          <div class="lift h">+80–100%</div>
+        </div>
+        <div class="moneti-row">
+          <div class="product">Salesforce Agentforce<em>CRM</em></div>
+          <div class="desc">按对话付费 + 平台级订阅升级，将 Einstein AI 升级为可执行任务的 AI 代理。客户可自行编排工作流。</div>
+          <div class="price">$2/对话</div>
+          <div class="lift m">+15–25%</div>
+        </div>
+        <div class="moneti-row">
+          <div class="product">ServiceNow Now Assist<em>NOW</em></div>
+          <div class="desc">在 Pro/Enterprise 订阅上叠加 AI 增强层，覆盖 ITSM / HR / Customer Service 三大模块。</div>
+          <div class="price">+20–25% 订阅溢价</div>
+          <div class="lift m">+20–25%</div>
+        </div>
+        <div class="moneti-row">
+          <div class="product">Adobe Firefly + GenAI<em>ADBE</em></div>
+          <div class="desc">"生成式积分" 按月计入订阅，超额部分按 credit 购买。Creative Cloud 全线渗透。</div>
+          <div class="price">含订阅 + Credit 包</div>
+          <div class="lift m">+10–15%</div>
+        </div>
+        <div class="moneti-row">
+          <div class="product">Snowflake Cortex<em>SNOW</em></div>
+          <div class="desc">在数据仓库上叠加大模型调用，按 token / 计算积分计费，与既有 consumption 模式融合。</div>
+          <div class="price">按 token / Credit 计费</div>
+          <div class="lift m">+15–20%</div>
+        </div>
+        <div class="moneti-row">
+          <div class="product">Palantir AIP<em>PLTR</em></div>
+          <div class="desc">"Bootcamp" 闪电入场 + ACV 大幅扩张，单客户合同从 $1M 量级跳升至 $5–10M 量级。</div>
+          <div class="price">合同级定价</div>
+          <div class="lift h">+200%+ (单客户)</div>
+        </div>
+        <div class="moneti-row">
+          <div class="product">金山办公 WPS AI<em>688111</em></div>
+          <div class="desc">订阅化产品基础上加售 AI 套餐；个人版 ~¥150–300/年，企业版按席位授权。</div>
+          <div class="price">¥150–500/年</div>
+          <div class="lift m">+20–30%</div>
+        </div>
+        <div class="moneti-row">
+          <div class="product">用友 YonGPT<em>600588</em></div>
+          <div class="desc">嵌入财务/HR/供应链场景，按行业模块授权；订阅化转型提供 AI 切入点。</div>
+          <div class="price">模块级 + 项目级</div>
+          <div class="lift l">+10–15%</div>
+        </div>
+      </div>
+      <div class="exhibit-foot"><strong>资料来源：</strong>各公司官方定价页、投资者会议披露、行业访谈。ARPU 提升幅度为研究估算的现阶段渗透情况，实际兑现取决于客户采用率与续约结构。<strong>关键判断：</strong>"AI 提价" 路径已在 Microsoft、Palantir 两个极端案例上被验证；中游 SaaS 板块的盈利上修通道仍未完全被市场定价。</div>
+    </div>
+
     <!-- ============================================================
          SECTION 4 — DOWNSTREAM
          ============================================================ -->
@@ -969,9 +1776,15 @@
       <p class="lede">下游应用层的兑现节奏最长，但一旦突破，弹性最显著。智能驾驶、机器人、医疗影像、机器视觉是当前确定性相对最高的四条赛道。</p>
     </div>
 
+    <div class="prose">
+      <p>下游 AI 投资的核心难点不在于"哪个场景值得 AI"——所有场景都值得——而在于"哪个场景在三年内能产生现金流"。从这个角度看，下游赛道可粗略分为四档：</p>
+      <p><strong>已商业化 / 规模化阶段</strong>（智能驾驶 L2+、工业机器人、机器视觉、安防 AI）：单位经济模型已跑通，估值主要受周期与渗透率驱动。<strong>临近规模化阶段</strong>（医疗影像 AI、电力/能源 AI、零售 AI 客服）：试点项目集中转化为合同，未来 12–24 个月有显著放量空间。<strong>试点阶段</strong>（手术机器人、企业 AI Agent、AI Copilot 在垂直行业的渗透）：单点案例已成功，但客户接受度与价格弹性仍在摸索。<strong>研发阶段</strong>（人形机器人、AI 消费硬件、量子 + AI）：技术与商业模式均未定型，属于"长期看涨期权"。</p>
+      <p>智能驾驶是当前下游赛道中最具确定性的兑现路径。<em class="highlight">中国 L2+ 渗透率从 2022 年的 ~14% 跃升至 2024 年底的 ~45%</em>，特斯拉 FSD V12 / V13 的端到端架构带动行业范式切换。地平线、德赛西威等"中国卖铲子"标的的订单已能见度至 2026 年。</p>
+    </div>
+
     <div class="exhibit">
       <div class="exhibit-head">
-        <div class="exhibit-tag">Exhibit 4</div>
+        <div class="exhibit-tag">Exhibit 7</div>
         <div class="exhibit-title serif">下游头部公司对照</div>
         <div class="exhibit-sub">智能驾驶、机器人、医疗、机器视觉、智能物流</div>
       </div>
@@ -1022,6 +1835,121 @@
       <div class="exhibit-foot"><strong>注：</strong>EU 标识为欧盟注册主体在美股 ADR 上市。</div>
     </div>
 
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 8</div>
+        <div class="exhibit-title serif">下游 AI 赛道兑现时间轴</div>
+        <div class="exhibit-sub">按"试点 / 规模化 / 成熟"三阶段映射主要应用场景的兑现窗口（2024–2030）</div>
+      </div>
+      <div>
+        <div class="tl-axis">
+          <div>赛道</div>
+          <div>2024</div>
+          <div>2025</div>
+          <div>2026</div>
+          <div>2027</div>
+          <div>2028–2030</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">智能驾驶 L2+<em>FSD/XNGP/天神之眼</em></div>
+          <div class="tl-bar">
+            <div class="seg mature" style="left:0%;right:0%">全面规模化</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">工业机器人<em>ABB / 埃斯顿 / 汇川</em></div>
+          <div class="tl-bar">
+            <div class="seg mature" style="left:0%;right:0%">成熟期 · 周期受经济敏感</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">机器视觉 / 安防<em>海康 / 大华 / Cognex</em></div>
+          <div class="tl-bar">
+            <div class="seg mature" style="left:0%;right:0%">成熟期 · AIoT 渗透扩张</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">医疗影像 AI<em>联影 / GE Healthcare</em></div>
+          <div class="tl-bar">
+            <div class="seg scaling" style="left:0%;right:20%">规模化中 · 医院端付费习惯成型</div>
+            <div class="seg mature" style="left:80%;right:0%">成熟</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">智能物流 / 仓储<em>AMZN / JD 物流</em></div>
+          <div class="tl-bar">
+            <div class="seg scaling" style="left:0%;right:25%">规模化</div>
+            <div class="seg mature" style="left:75%;right:0%">成熟</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">企业 AI Agent<em>MSFT Copilot / Salesforce</em></div>
+          <div class="tl-bar">
+            <div class="seg pilot" style="left:0%;right:65%">试点</div>
+            <div class="seg scaling" style="left:35%;right:5%">规模化</div>
+            <div class="seg mature" style="left:95%;right:0%"></div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">手术机器人<em>ISRG / 微创医疗</em></div>
+          <div class="tl-bar">
+            <div class="seg pilot" style="left:0%;right:55%">早期商业化</div>
+            <div class="seg scaling" style="left:45%;right:5%">规模化</div>
+            <div class="seg mature" style="left:95%;right:0%"></div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">AI 教育 / 内容生成<em>讯飞 / Duolingo / Adobe</em></div>
+          <div class="tl-bar">
+            <div class="seg pilot" style="left:0%;right:60%">试点</div>
+            <div class="seg scaling" style="left:40%;right:10%">规模化</div>
+            <div class="seg mature" style="left:90%;right:0%"></div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">人形机器人<em>Optimus / Figure / 优必选</em></div>
+          <div class="tl-bar">
+            <div class="seg pilot" style="left:0%;right:60%">原型 / 工厂试点</div>
+            <div class="seg future" style="left:40%;right:0%">商业化探索</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">AI 消费硬件<em>AI Pin / Meta Glasses</em></div>
+          <div class="tl-bar">
+            <div class="seg pilot" style="left:0%;right:70%">早期产品</div>
+            <div class="seg future" style="left:30%;right:0%">仍在产品定义</div>
+          </div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-label">L4 Robotaxi<em>Waymo / Cruise / 百度萝卜</em></div>
+          <div class="tl-bar">
+            <div class="seg pilot" style="left:0%;right:50%">区域试运营</div>
+            <div class="seg scaling" style="left:50%;right:5%">规模化</div>
+            <div class="seg mature" style="left:95%;right:0%"></div>
+          </div>
+        </div>
+
+        <div class="tl-legend">
+          <span><i style="background:var(--grey-500)"></i> 试点</span>
+          <span><i style="background:var(--amber)"></i> 规模化</span>
+          <span><i style="background:var(--green)"></i> 成熟期</span>
+          <span><i style="background:repeating-linear-gradient(45deg, var(--grey-300), var(--grey-300) 4px, var(--grey-100) 4px, var(--grey-100) 8px)"></i> 商业化探索</span>
+        </div>
+      </div>
+      <div class="exhibit-foot"><strong>方法论：</strong>"试点" = 客户付费但 ARR &lt; $100M；"规模化" = 行业年收入跨越 $1B 门槛；"成熟" = 高于 GDP 增速的稳态市场。<strong>投资含义：</strong>已规模化的赛道适合 β 配置，规模化中的赛道适合 α 弹性配置，试点 / 商业化探索的赛道更适合长期看涨期权而非主仓位。</div>
+    </div>
+
     <!-- ============================================================
          SECTION 5 — COMPETITIVE HEATMAP
          ============================================================ -->
@@ -1033,7 +1961,7 @@
 
     <div class="exhibit">
       <div class="exhibit-head">
-        <div class="exhibit-tag">Exhibit 5</div>
+        <div class="exhibit-tag">Exhibit 9</div>
         <div class="exhibit-title serif">美中 AI 产业链分环节竞争位势</div>
         <div class="exhibit-sub">10 分制 · 数字越高代表该方在该环节竞争位势越强</div>
       </div>
@@ -1108,6 +2036,51 @@
       <p>在 GPU 与基础大模型层面的差距短期难以快速收窄，但 AI 服务器系统集成、800G/1.6T 光模块和电动车智能驾驶量产，是中方供应链有望持续领先甚至定价权外溢的环节。这三条赛道既享受全球 AI 资本支出红利，又不直接面临最前沿出口管制。</p>
     </div>
 
+    <div class="prose">
+      <p>美中竞争结果的不同情景将显著改变上述判断。我们将其归纳为三种相互排斥的情景，并赋予主观概率权重——投资者可基于自身判断重新加权。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 10</div>
+        <div class="exhibit-title serif">美中 AI 脱钩情景分析</div>
+        <div class="exhibit-sub">三种情景的概率权重、产业影响与对应投资定位</div>
+      </div>
+      <div class="scenarios">
+        <div class="sc-card base">
+          <div class="prob">60%</div>
+          <div class="lbl">情景 A · 基准</div>
+          <h4 class="serif">"管控竞争 + 各自加速"</h4>
+          <p class="body">美方持续收紧尖端 GPU、HBM、EUV 设备出口；中方在成熟制程、AI 服务器、光模块、应用层加速国产替代。两条供应链并行扩张，全球 AI 资本开支仍处于上升通道。</p>
+          <div class="impact">
+            <strong>对组合的含义</strong>
+            上游卖铲子两条赛道同步受益；中方"AI 服务器 + 光模块 + 智能驾驶供应链"持续领先；中方先进 GPU 自研仍受设备制约。NVDA / TSM / 中际旭创 / 比亚迪 等核心标的均处于受益区间。
+          </div>
+        </div>
+        <div class="sc-card full">
+          <div class="prob">25%</div>
+          <div class="lbl">情景 B · 下行</div>
+          <h4 class="serif">"全面脱钩 + 关税升级"</h4>
+          <p class="body">出口管制升级至软件与基础模型，并辅以关税；中方反制延伸至光模块、稀土、电池等领域。全球 AI 资本开支增长边际放缓，估值倍数集中收缩。</p>
+          <div class="impact">
+            <strong>对组合的含义</strong>
+            美股 AI 板块短期估值压力大，中方光模块面临海外订单不确定性；但中方信创、半导体设备国产化、机器人本体加速。逻辑切换为"中方内循环受益方"。
+          </div>
+        </div>
+        <div class="sc-card conv">
+          <div class="prob">15%</div>
+          <div class="lbl">情景 C · 上行</div>
+          <h4 class="serif">"管制选择性放松 + 标准协同"</h4>
+          <p class="body">出口管制白名单局部放开（成熟制程设备、特定 GPU 型号），双方在 AI 安全标准、数据流动等议题上形成阶段性协议。资本开支强度同步上修。</p>
+          <div class="impact">
+            <strong>对组合的含义</strong>
+            ASML / Lam / AMAT 等设备厂商受益；中方面板/封测产能利用率回升；TSM 在中国市场需求复苏；中方 AI 应用层估值修复。属于"皆大欢喜"情景。
+          </div>
+        </div>
+      </div>
+      <div class="exhibit-foot"><strong>方法论：</strong>概率为基于公开政策走向、产业访谈、过往关税周期类比的主观判断，并非定量预测。建议读者根据自身判断调整权重。<strong>跨情景共识标的：</strong>TSM（除情景 B 全面脱钩外均受益）、中际旭创（情景 A / C 受益）、AI 服务器代工（情景 A 直接受益、情景 B / C 弹性大）。</div>
+    </div>
+
     <!-- ============================================================
          SECTION 6 — WATCHLIST
          ============================================================ -->
@@ -1119,7 +2092,7 @@
 
     <div class="exhibit">
       <div class="exhibit-head">
-        <div class="exhibit-tag">Exhibit 6</div>
+        <div class="exhibit-tag">Exhibit 11</div>
         <div class="exhibit-title serif">高确信度观察清单</div>
         <div class="exhibit-sub">按价值链分层与市场来源平衡选取</div>
       </div>
@@ -1173,18 +2146,320 @@
       <div class="exhibit-foot"><strong>分类定义：</strong>"高确信 · 结构" = 产业格局明确、护城河可见；"中确信 · α 弹性" = 受益于 AI 资本开支放量，弹性大于龙头；"高潜 · β 结构" = 长周期国产替代或场景渗透逻辑。</div>
     </div>
 
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 12</div>
+        <div class="exhibit-title serif">三大核心主题的 Bull / Base / Bear 推演</div>
+        <div class="exhibit-sub">在未来 12–18 个月时间窗口内对每个主题的情景叙事</div>
+      </div>
+      <div class="bbb">
+        <div class="bbb-row head">
+          <div>主题</div>
+          <div class="bull">Bull · 上行</div>
+          <div class="base">Base · 基准</div>
+          <div class="bear">Bear · 下行</div>
+        </div>
+
+        <div class="bbb-row">
+          <div class="theme">AI 算力卖铲子<em>NVDA · TSM · 中际旭创</em></div>
+          <div class="scen">
+            <strong>+30 至 +50%</strong>
+            Hyperscaler capex 2025–2026 持续超指引；推理需求快速放量；CoWoS 与 HBM 产能扩张顺利，毛利维持高位。
+          </div>
+          <div class="scen">
+            <strong>+10 至 +20%</strong>
+            Capex 增速从 +37% 收敛至 +20%；价格压力出现但被需求消化；估值倍数小幅压缩，业绩仍上修。
+          </div>
+          <div class="scen">
+            <strong>-25 至 -40%</strong>
+            "ChatGPT 时刻"过后 hyperscaler 集体放缓 capex；库存周期向上游传导；CoWoS 提前缓解引发"产能过剩"叙事。
+          </div>
+        </div>
+
+        <div class="bbb-row">
+          <div class="theme">AI 软件提价兑现<em>MSFT · CRM · NOW · PLTR</em></div>
+          <div class="scen">
+            <strong>+25 至 +40%</strong>
+            Copilot 在 E3/E5 客户中渗透率突破 25%；Agentforce 推动 CRM 客户 ACV 提升 30%+；行业 AI 软件估值上修。
+          </div>
+          <div class="scen">
+            <strong>+10 至 +20%</strong>
+            Copilot 渗透率年化 +6 pp；Agentforce 兑现速度慢于预期但方向正确；估值小幅扩张，业绩稳健。
+          </div>
+          <div class="scen">
+            <strong>-15 至 -30%</strong>
+            Copilot ROI 论证不充分，企业续约率低于预期；竞争（Google、开源）压制定价权；SaaS 板块估值回归。
+          </div>
+        </div>
+
+        <div class="bbb-row">
+          <div class="theme">中方 AI 硬件供应链<em>光模块 · 服务器代工 · 智驾</em></div>
+          <div class="scen">
+            <strong>+40 至 +70%</strong>
+            1.6T 光模块 2026 H1 量产顺利，毛利维持 40%+；GB200 服务器代工订单超预期；中方智驾 L3 政策落地。
+          </div>
+          <div class="scen">
+            <strong>+15 至 +30%</strong>
+            订单能见度延续至 2026；价格略有压力但需求消化；中方智驾渗透率继续提升至 60%+。
+          </div>
+          <div class="scen">
+            <strong>-30 至 -50%</strong>
+            出口管制扩展至光模块；海外大客户拆解中方供应链；GB200 出货推迟；新能源车价格战导致智驾供应链承压。
+          </div>
+        </div>
+      </div>
+      <div class="exhibit-foot"><strong>说明：</strong>百分比变化为对应主题板块（而非个股）的 12–18 个月预期回报，反映情景叙事而非定量目标价。<strong>不对称性：</strong>三大主题均呈现"Bull 上行 ≈ Bear 下行"的对称性，但 Base case 的概率显著高于两端，预期收益的数学期望仍偏正。</div>
+    </div>
+
     <!-- ============================================================
-         SECTION 7 — LIVE DATA
+         SECTION 7 — CATALYSTS
          ============================================================ -->
     <div class="section-head">
-      <div class="number">第七章 · 实时数据</div>
+      <div class="number">第七章 · 催化剂</div>
+      <h2 class="serif">未来 12 个月的关键事件日历</h2>
+      <p class="lede">资本市场对 AI 主题的预期已经较为充分，下一步关键在于"催化剂能否兑现"。下表整理 2026 年下半年至 2027 年上半年的核心事件——任何一项超出/不及预期都可能引发主题轮动。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 13</div>
+        <div class="exhibit-title serif">2026 H2 – 2027 H1 关键催化剂日历</div>
+        <div class="exhibit-sub">分类：业绩 · 产品 · 政策 · 宏观</div>
+      </div>
+      <div class="catalyst">
+        <div class="cat-row">
+          <div class="date">2026 Q2 业绩季<br/>7 月底 – 8 月底</div>
+          <div class="tag earn">业绩</div>
+          <div class="desc">Microsoft / Google / Meta / Amazon FY26 capex 指引更新；NVIDIA FY27 Q1 财报。<em>市场关注：capex 增速是否从 +37% 进一步加速或开始收敛。</em></div>
+        </div>
+        <div class="cat-row">
+          <div class="date">2026 Q3 末</div>
+          <div class="tag prod">产品</div>
+          <div class="desc">NVIDIA Blackwell Ultra (B300) 量产爬坡；AMD MI400 系列发布预期。<em>影响 CoWoS / HBM4 供应链与 AMD 估值。</em></div>
+        </div>
+        <div class="cat-row">
+          <div class="date">2026 年 10 月</div>
+          <div class="tag pol">政策</div>
+          <div class="desc">美方半导体出口管制年度更新窗口；BIS 可能调整 GPU / HBM / 设备的实体清单与许可证范围。<em>对中方 AI 芯片国产替代节奏影响最大。</em></div>
+        </div>
+        <div class="cat-row">
+          <div class="date">2026 年 11 月</div>
+          <div class="tag prod">产品</div>
+          <div class="desc">Apple AI Pro / iPhone AI 大版本更新（按惯例 9–11 月）；Meta Connect / Glasses 新版本。<em>验证 AI 消费硬件路径是否成立。</em></div>
+        </div>
+        <div class="cat-row">
+          <div class="date">2026 Q4 业绩季<br/>1 月底 – 2 月初</div>
+          <div class="tag earn">业绩</div>
+          <div class="desc">TSMC FY26 全年法说会披露 CoWoS 与 2nm 产能；Hyperscaler FY27 capex 首次指引。<em>"capex 顶"是否出现的最关键观察点。</em></div>
+        </div>
+        <div class="cat-row">
+          <div class="date">2026 年 12 月</div>
+          <div class="tag macro">宏观</div>
+          <div class="desc">中央经济工作会议（中方 2027 政策定调）；Fed 12 月议息会议。<em>对中方 AI 应用、信创、半导体设备国产化政策力度影响显著。</em></div>
+        </div>
+        <div class="cat-row">
+          <div class="date">2027 Q1</div>
+          <div class="tag prod">产品</div>
+          <div class="desc">NVIDIA GTC 2027（按惯例 3 月底）；特斯拉 FSD V14 / Robotaxi 落地节奏；中方头部智驾厂商 L3 准入。<em>智能驾驶、机器人主题催化剂集中释放。</em></div>
+        </div>
+        <div class="cat-row">
+          <div class="date">2027 年 4–5 月</div>
+          <div class="tag macro">宏观</div>
+          <div class="desc">中国一季度 GDP + 政策窗口；特斯拉 Q1 财报；OpenAI / Anthropic 新一轮融资估值披露。<em>大模型公司估值映射上市公司。</em></div>
+        </div>
+        <div class="cat-row">
+          <div class="date">2027 年 6 月</div>
+          <div class="tag prod">产品</div>
+          <div class="desc">Apple WWDC 2027（AI Agent 全栈整合预期）；Computex 2027；Microsoft Build。<em>"AI Agent + 设备" 全面对决。</em></div>
+        </div>
+      </div>
+      <div class="exhibit-foot"><strong>使用方法：</strong>建议持有者在每个事件前 2–4 周对相关持仓进行预期管理；事件后 5 个交易日内的反应往往决定后续 3 个月走势。</div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 8 — PORTFOLIO FRAMEWORK
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第八章 · 组合构建</div>
+      <h2 class="serif">从研究到组合：示例性配置框架</h2>
+      <p class="lede">在 65+ 家覆盖标的中选出可执行组合需要明确的分层方法。以下框架按"确信度 × 仓位重量 × 持有期"三维度给出示例性配置思路，仅作研究参考。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 14</div>
+        <div class="exhibit-title serif">示例性 AI 主题组合构建框架</div>
+        <div class="exhibit-sub">100% 仓位的分层配置思路（非投资建议）</div>
+      </div>
+      <div class="portfolio">
+        <div>
+          <div class="port-stack">
+            <div class="port-seg s1" style="flex:50"><span class="pct">50%</span><span class="lbl">核心结构</span></div>
+            <div class="port-seg s2" style="flex:30"><span class="pct">30%</span><span class="lbl">α 弹性</span></div>
+            <div class="port-seg s3" style="flex:15"><span class="pct">15%</span><span class="lbl">β 长周期</span></div>
+            <div class="port-seg s4" style="flex:5"><span class="pct">5%</span><span class="lbl">对冲</span></div>
+          </div>
+          <div class="prose" style="margin: 0;">
+            <p>核心结构仓占主要权重，确保组合受益于"AI 资本开支 + SaaS 提价"两大趋势的复利；α 弹性仓追求超越龙头的回报，但需接受高于平均的波动；β 长周期仓平滑组合波动，押注国产替代与场景渗透；对冲仓在情景 B（脱钩升级）下保护组合，可使用波动率工具、防御性板块或现金。</p>
+            <p>建议每季度根据 Exhibit 13 的催化剂时间表 review 持仓节奏。</p>
+          </div>
+        </div>
+
+        <ul class="port-detail">
+          <li>
+            <div class="head"><span class="dot s1"></span><strong>核心结构 · 50%</strong><span class="w">12–24 月持有</span></div>
+            <div class="desc">NVDA · TSM · MSFT · GOOGL · AVGO。AI 算力与 AI 软件双引擎的"水电煤"。回撤时加仓而非减仓。</div>
+          </li>
+          <li>
+            <div class="head"><span class="dot s2"></span><strong>α 弹性 · 30%</strong><span class="w">6–18 月持有</span></div>
+            <div class="desc">中际旭创 · 工业富联 · 浪潮信息 · PLTR · 寒武纪 · ASML · Vertiv。受益资本开支的高弹性标的，对节奏变化敏感。</div>
+          </li>
+          <li>
+            <div class="head"><span class="dot s3"></span><strong>β 长周期 · 15%</strong><span class="w">2–3 年持有</span></div>
+            <div class="desc">比亚迪 · 海康威视 · 联影医疗 · 科大讯飞 · 用友 · 美团。场景渗透与国产替代逻辑，时间换空间。</div>
+          </li>
+          <li>
+            <div class="head"><span class="dot s4"></span><strong>对冲 / 现金 · 5%</strong><span class="w">机动</span></div>
+            <div class="desc">VIX call · 黄金 · 短债。在情景 B 上行（脱钩升级）触发时启用，平时保持现金。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="exhibit-foot"><strong>免责：</strong>本框架仅作教学与研究展示，不构成投资建议。实际仓位需根据个人风险承受能力、投资期限、税务考量与流动性需求调整。</div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 9 — SYNTHESIS · FIVE-LAYER CAKE
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第九章 · 综合视角</div>
+      <h2 class="serif">"五层蛋糕" 模型：把全报告压缩到一张图</h2>
+      <p class="lede">把前 8 章的所有结论放回到一张纵向截面上：AI 产业其实是一块"五层蛋糕"——从最底层的能源与基础设施，逐层向上抬升到顶层的终端场景。每一层都有不同的现金流时序、护城河类型与估值逻辑。</p>
+    </div>
+
+    <div class="prose">
+      <p>相较于传统的"上游 / 中游 / 下游"三层划分，"五层蛋糕"模型把过去常被合并的<strong>能源 vs 算力</strong>、<strong>模型 vs 应用</strong>分别拆开，更贴近资本市场对每一层的差异化定价。也更直观地呈现：<em class="highlight">越往下越是"地基"——枯燥但订单可见度高；越往上越是"奶油"——估值波动大、想象空间大、兑现节奏拉长。</em></p>
+      <p>这张图本身就是一份"投资清单"。每一层都对应一组护城河类型与时间窗口，决定了你在该层应该用什么定价模型、应该容忍多少波动、应该如何配置仓位（参见 Exhibit 14）。</p>
+    </div>
+
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 15</div>
+        <div class="exhibit-title serif">AI 产业的"五层蛋糕"</div>
+        <div class="exhibit-sub">每层均标注：核心业务 · 代表公司 · 现金流兑现度 · 关键护城河</div>
+      </div>
+
+      <div class="cake">
+        <div class="cake-layer l5">
+          <div class="lhead">
+            <span class="lnum">L5</span>
+            <span class="lname">终端 · 场景<em>Endpoints &amp; Use Cases</em></span>
+          </div>
+          <div class="lbody">
+            智能驾驶、机器人、医疗、安防、内容、消费硬件——AI 能力最终落地的"出口"。短期估值最难拿捏，但拐点出现时弹性最大。
+            <span class="tk">TSLA · BYD 比亚迪 · XPEV · LI · ISRG · 海康 · 大华 · 联影 · 微创医疗 · 京东 · 美团 · AAPL · META</span>
+          </div>
+          <div class="lstatus">
+            <span class="cash">★★☆☆☆</span>
+            <span>窗口 2026–2030</span>
+            <span class="moat">护城河：场景数据 + 规模制造</span>
+          </div>
+        </div>
+
+        <div class="cake-layer l4">
+          <div class="lhead">
+            <span class="lnum">L4</span>
+            <span class="lname">应用 · 工具<em>Apps &amp; AI-Enhanced SaaS</em></span>
+          </div>
+          <div class="lbody">
+            把模型能力嵌入既有 SaaS / OA / ERP / CRM，通过 ARPU 提升变现。是当前 AI 商业化兑现速度最快的一层。
+            <span class="tk">MSFT Copilot · CRM Agentforce · NOW Now Assist · ADBE Firefly · PLTR AIP · SNOW Cortex · 金山 WPS AI · 用友 · 第四范式</span>
+          </div>
+          <div class="lstatus">
+            <span class="cash">★★★★☆</span>
+            <span>窗口 已兑现 / 加速中</span>
+            <span class="moat">护城河：客户关系 + 工作流</span>
+          </div>
+        </div>
+
+        <div class="cake-layer l3">
+          <div class="lhead">
+            <span class="lnum">L3</span>
+            <span class="lname">模型 · 平台<em>Foundation Models &amp; Cloud</em></span>
+          </div>
+          <div class="lbody">
+            基础大模型 + 云算力 + 企业级 AI 平台。赢者通吃格局明朗：头部 3–5 家占据绝大部分商业化产值，二三线公司必须靠垂直纵深生存。
+            <span class="tk">MSFT/Azure · GOOGL/Gemini · AMZN/AWS · META · OpenAI · Anthropic · BABA/通义 · 百度 · 腾讯 · 商汤 · 科大讯飞</span>
+          </div>
+          <div class="lstatus">
+            <span class="cash">★★★☆☆</span>
+            <span>窗口 头部已兑现</span>
+            <span class="moat">护城河：算力 + 数据飞轮</span>
+          </div>
+        </div>
+
+        <div class="cake-layer l2">
+          <div class="lhead">
+            <span class="lnum">L2</span>
+            <span class="lname">硬件 · 算力<em>Silicon, Equipment &amp; Systems</em></span>
+          </div>
+          <div class="lbody">
+            AI 芯片、晶圆代工、半导体设备、HBM、CoWoS、AI 服务器、光模块——当前 AI 牛市的绝对核心受益层，资本市场对其重新定价。
+            <span class="tk">NVDA · AMD · TSM · ASML · AVGO · SK Hynix · MU · AMAT · LRCX · 寒武纪 · 海光 · 中芯国际 · 北方华创 · 浪潮信息 · 工业富联 · 中际旭创 · 新易盛</span>
+          </div>
+          <div class="lstatus">
+            <span class="cash">★★★★★</span>
+            <span>窗口 大规模兑现中</span>
+            <span class="moat">护城河：技术代差 + 产能</span>
+          </div>
+        </div>
+
+        <div class="cake-layer l1">
+          <div class="lhead">
+            <span class="lnum">L1</span>
+            <span class="lname">能源 · 基础设施<em>Power, Cooling &amp; Real Estate</em></span>
+          </div>
+          <div class="lbody">
+            数据中心电力、变压器、UPS、液冷、机柜、土地、网络骨干。看似最枯燥，却是 AI 数据中心建设链条上订单可见度最高、最先 priced-in 的环节，也是未来 3 年的"硬约束"。
+            <span class="tk">Vertiv · Schneider · Eaton · Equinix · Digital Realty · Constellation Energy · NRG · 英维克 · 高澜股份 · 同飞股份 · 杰华特 · 国电南瑞</span>
+          </div>
+          <div class="lstatus">
+            <span class="cash">★★★★☆</span>
+            <span>窗口 持续兑现</span>
+            <span class="moat">护城河：选址 + 长期合约</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cake-summary">
+        <div>
+          <strong>纵向时序</strong>
+          自下而上，现金流兑现节奏从"已规模化"过渡到"才刚开始"。L1–L2 是当前账面兑现的主力，L3 头部已兑现 / 长尾仍亏损，L4 正在加速兑现，L5 单点突破后将出现非线性弹性。
+        </div>
+        <div>
+          <strong>横向估值</strong>
+          越靠近底层（L1/L2），估值越向"产能 × 价格 × 毛利"的硬指标聚焦；越靠近顶层（L4/L5），越多用 DCF + 故事性叙事——这意味着<em>顶层的估值更脆弱，但拐点出现时回报弹性更大</em>。
+        </div>
+        <div>
+          <strong>对组合的含义</strong>
+          建议主仓位锚定 L2 + L4（参见 Exhibit 14 的核心结构 50% 与 α 弹性 30%）；L1 作为"AI 资本开支放量必受益"的稳健配置（隐含在 α 弹性仓中）；L5 用 β 长周期仓承接（15%），L3 中以头部美股 + 中方头部混合。
+        </div>
+      </div>
+
+      <div class="exhibit-foot"><strong>说明：</strong>现金流兑现度采用 5 颗星定性评分，反映当前时点该层在公开市场已能稳定贡献正向自由现金流的程度。"窗口"指当前所处阶段。<strong>跨层级共识：</strong>L2（硬件算力）与 L4（应用工具）是过去 18 个月超额收益最集中、未来 12 个月可见度仍然最高的两层。</div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 10 — LIVE DATA
+         ============================================================ -->
+    <div class="section-head">
+      <div class="number">第十章 · 实时数据</div>
       <h2 class="serif">观察清单实时行情</h2>
       <p class="lede">下方为代表性标的的实时报价示例。接入金融数据 API（Finnhub / Alpha Vantage / Twelve Data / Polygon / Yahoo Finance）并替换 API Key 后即可生效。</p>
     </div>
 
     <div class="exhibit">
       <div class="exhibit-head">
-        <div class="exhibit-tag">Exhibit 7</div>
+        <div class="exhibit-tag">Exhibit 16</div>
         <div class="exhibit-title serif">实时报价示例板</div>
         <div class="exhibit-sub">数据将异步加载；未配置 API Key 时显示占位符</div>
       </div>
@@ -1203,7 +2478,7 @@
 
     <div class="exhibit">
       <div class="exhibit-head">
-        <div class="exhibit-tag">Exhibit 8</div>
+        <div class="exhibit-tag">Exhibit 17</div>
         <div class="exhibit-title serif">主要风险因子总览</div>
       </div>
       <div class="risks">
@@ -1232,6 +2507,92 @@
           <p>台海局势、跨境数据流动等议题对供应链的潜在冲击需持续监控。</p>
         </div>
       </div>
+    </div>
+
+    <!-- ============================================================
+         APPENDIX · GLOSSARY
+         ============================================================ -->
+    <div class="exhibit">
+      <div class="exhibit-head">
+        <div class="exhibit-tag">Exhibit 18 · 附录</div>
+        <div class="exhibit-title serif">技术与金融术语表</div>
+        <div class="exhibit-sub">本报告中出现的关键术语解释</div>
+      </div>
+      <dl class="glossary">
+        <div class="gl-row">
+          <dt>HBM (High Bandwidth Memory)</dt>
+          <dd>高带宽内存，垂直堆叠 DRAM，AI 训练芯片必需，单颗 GPU 的 HBM 价值占整机 30%+。当前 HBM3e 主供应商为 SK Hynix。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>CoWoS (Chip-on-Wafer-on-Substrate)</dt>
+          <dd>TSMC 主导的 2.5D 先进封装技术，将 GPU 与 HBM 集成在硅基板上。是 NVIDIA H100/B100 出货的产能瓶颈。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>EUV (Extreme Ultraviolet Lithography)</dt>
+          <dd>极紫外光刻，ASML 独家生产的光刻设备，是 7nm 以下先进制程必需装备。High-NA EUV 单价 $350M+。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>ARPU (Average Revenue Per User)</dt>
+          <dd>单用户平均收入。SaaS 公司将 AI 能力定价化后最直接的兑现指标。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>ACV (Annual Contract Value)</dt>
+          <dd>年化合同金额，企业 SaaS 销售中比 ARR 更精确的客户价值度量。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>Capex (Capital Expenditure)</dt>
+          <dd>资本开支。Hyperscaler capex 是 AI 上游订单可见度最重要的领先指标。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>CUDA</dt>
+          <dd>NVIDIA 推出的 GPU 计算框架，AI 软件生态的事实标准。是 NVIDIA 最深的护城河之一。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>ASIC (Application-Specific IC)</dt>
+          <dd>专用集成电路。Google TPU、Amazon Trainium、Meta MTIA 等自研 AI 芯片均为 ASIC，挑战 GPU 通用性。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>FSD (Full Self-Driving)</dt>
+          <dd>特斯拉的高阶辅助驾驶产品，V12 起采用端到端神经网络架构，是行业范式切换的标志。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>L2+ / L3 / L4</dt>
+          <dd>智能驾驶分级。L2+ 为高阶辅助驾驶（驾驶员监管）、L3 限定条件脱手、L4 限定区域无人化。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>Hyperscaler</dt>
+          <dd>超大规模云厂商，特指 AWS、Azure、Google Cloud（外加 Meta、Oracle）。AI 资本开支的最大金主。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>AIOps / MLOps</dt>
+          <dd>AI 增强的 IT 运维 / 机器学习运维。Datadog、博睿数据等可观测性公司的核心切入点。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>RPA (Robotic Process Automation)</dt>
+          <dd>流程机器人自动化，代表公司 UiPath。AI Agent 兴起后逐步演化为"智能 + 自动化"双轮模式。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>ADR (American Depositary Receipt)</dt>
+          <dd>美国存托凭证。中概股在美股的存在形态，如 BABA、BIDU、JD 等。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>A+H 双重上市</dt>
+          <dd>同时在沪深 A 股与港股两地上市，如比亚迪 002594 / 1211.HK。两地价差反映流动性与监管溢价。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>信创</dt>
+          <dd>"信息技术应用创新"的简称，指国产 IT 基础设施替代进口（CPU、OS、数据库、办公套件）。是中方 L1 / L2 / L4 多层的政策驱动力。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>α 弹性 / β 结构</dt>
+          <dd>本报告使用：α 弹性 = 受益于行业放量但波动大于龙头；β 结构 = 跟随长周期产业渗透的稳健配置。</dd>
+        </div>
+        <div class="gl-row">
+          <dt>护城河 (Moat)</dt>
+          <dd>巴菲特术语，指企业保持超额利润的结构性壁垒。本报告强调五种：技术代差、规模制造、客户关系、生态绑定、政策牌照。</dd>
+        </div>
+      </dl>
+      <div class="exhibit-foot"><strong>研究方法补充：</strong>本报告覆盖标准为：(1) 上市交易主体（含中概股 ADR）；(2) 公开披露 AI 业务或主营业务直接受益于 AI；(3) 在所属环节具备代表性（市占率、营收规模或技术地位）。私募与初创公司未纳入。</div>
     </div>
 
   </section>
